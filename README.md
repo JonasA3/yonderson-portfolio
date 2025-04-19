@@ -1,48 +1,88 @@
-# Astro Starter Kit: Basics
+# 🌐 Yonderson – Developer Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to the codebase for [Yonderson.se](https://yonderson.se) — my personal portfolio site where I showcase my frontend development skills, projects, and design-thinking approach.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+This site is built with a modern tech stack focused on performance, accessibility, and clean architecture.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🛠️ Tech Stack
 
-## 🚀 Project Structure
+- **Framework**: [Astro](https://astro.build/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: TypeScript
+- **Components**: React (selective use)
+- **Code Quality**: ESLint + Prettier
+- **Deployment**: [Netlify](https://www.netlify.com/)
+- **CI**: GitHub Actions for lint/format checks
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
+## 📁 Project Structure
 /
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+├── .astro/               → Astro's internal build cache
+├── node_modules/         → Project dependencies
+├── public/               → Static assets (e.g., favicon, images)
+├── src/                  → All site code (pages, components, layouts)
+│   ├── pages/            → Route-based pages (index.astro, etc.)
+│   ├── layouts/          → Layout components like Layout.astro
+│   └── components/       → (To be added) Reusable UI components
+├── .github/
+│   └── workflows/        → GitHub Actions CI workflows
+├── .eslintrc.cjs         → ESLint config
+├── .prettierrc           → Prettier config
+├── .prettierignore       → Prettier ignore rules
+├── .gitignore            → Git ignore rules
+├── astro.config.mjs      → Astro project config
+├── tsconfig.json         → TypeScript config
+├── package.json          → Project metadata and scripts
+├── package-lock.json     → Dependency lockfile
+└── README.md             → You're reading it 😉
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 🚀 Available Scripts
 
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command             | Action                                  |
+|---------------------|-----------------------------------------|
+| `npm install`       | Install dependencies                    |
+| `npm run dev`       | Start local dev server                  |
+| `npm run build`     | Build the site for production           |
+| `npm run preview`   | Preview built site locally              |
+| `npm run lint`      | Run ESLint for code quality             |
+| `npm run format`    | Format code with Prettier               |
 
-## 👀 Want to learn more?
+---
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## ✨ Goals
+
+- 🧠 Highlight technical and creative skills
+- 📱 Be fully responsive and accessible
+- 🌍 Optimize performance and SEO
+- 🤝 Encourage contact and collaboration
+
+---
+
+## 🚧 Work in Progress
+
+This site is under active development. Planned features include:
+
+- Light/dark mode toggle
+- Project filtering & animation
+- Contact form integration
+- CMS or backend API (TBD)
+
+---
+
+## 📬 Contact
+
+- Site: [yonderson.se](https://yonderson.se)
+- GitHub: [github.com/JonasA3](https://github.com/JonasA3)
+- LinkedIn: *Add your link here if you want*
+
+---
+
+Made with 💙 by Jonas Andersson  
+*“With my sights set yonder.”*
