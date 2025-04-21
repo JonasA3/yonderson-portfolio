@@ -170,12 +170,12 @@ netlify.toml
 .eslintcache
 
 # Optional: Tailwind
-tailwind.config.js
-tailwind.config.cjs
-postcss.config.js
+# tailwind.config.js
+# tailwind.config.cjs
+# postcss.config.js
 
 # Astro (specific cache, etc.)
-astro.config.*
+# astro.config.*
 
 # Typescript
 *.tsbuildinfo
