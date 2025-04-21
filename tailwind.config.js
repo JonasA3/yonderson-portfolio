@@ -1,4 +1,5 @@
 /* eslint-env node */
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}', './public/**/*.html'],
@@ -12,4 +13,3 @@ module.exports = {
   },
   plugins: [],
 };
-/*Add comment for push*/
