@@ -8,10 +8,40 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Frontend developer portfolio of Jonas Andersson, focused on modern, performant and accessible websites."
+    />
+    <meta name="author" content="Jonas Andersson" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Yonderson – Frontend Portfolio" />
+    <meta
+      property="og:description"
+      content="Explore the frontend work and creative projects of Jonas Andersson."
+    />
+    <meta property="og:image" content="/social-preview.jpg" />
+    <meta property="og:url" content="https://yonderson.se" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yonderson – Frontend Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Explore the frontend work and creative projects of Jonas Andersson."
+    />
+    <meta name="twitter:image" content="/social-preview.jpg" />
+
+    <!-- Icons + Theme -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0f172a" />
+
     <meta name="generator" content={Astro.generator} />
+
     <title>Yonderson</title>
   </head>
+
   <body>
     <slot />
   </body>
