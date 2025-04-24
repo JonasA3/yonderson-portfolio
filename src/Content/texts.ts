@@ -23,18 +23,40 @@ profileText:
 Skilled in building responsive web applications using React, TypeScript and .NET.
 Known for a calm and collaborative work style, a hunger for learning, and a love
 for solving problems. My goal is to leverage my skills to create innovative solutions that make a positive impact on people's lives.`,
-skills: [
+activeSkills: [
     {
         area: 'Frontend',
-        skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'SASS', 'Redux', 'Redux Toolkit', 'REST API', 'SOAP API', 'GraphQL']
+        skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'REST API', 'SOAP API', 'GraphQL']
     },
     {
         area: 'Backend',
-        skills: ['C#', 'ASP.NET', 'Entity Framework', 'SQL Server', 'Node.js', 'github actions']
+        skills: ['Node.js', 'github actions']
     },
     {
         area: 'Tools & Platforms',
-        skills: ['Git', 'Github', 'VS Code', 'Visual Studio', 'Postman', 'Jira', 'Slack', 'Trello', 'Monday']
+        skills: ['Git', 'Github', 'VS Code', 'Postman', 'Slack', 'Trello', 'Monday']
+    },    
+    {
+        area: 'Design & UI/UX',
+        skills: ['Figma', 'Photoshop', 'Illustrator']
+    },
+    {
+        area: 'Other',
+        skills: ['Agile', 'Scrum', 'Kanban']
+    }
+],
+dormantSkills: [
+    {
+        area: 'Frontend',
+        skills: ['SASS', 'Redux', 'Redux Toolkit', 'jQuery', 'Bootstrap', 'Blazor']
+    },
+    {
+        area: 'Backend',
+        skills: ['C#', 'ASP.NET', 'Entity Framework', 'SQL Server', 'Python']
+    },
+    {
+        area: 'Tools & Platforms',
+        skills: ['Visual Studio','Litium Commerce', 'Umbraco', 'Jira', 'confluence']
     },
     {
         area: 'Cloud',
@@ -42,8 +64,9 @@ skills: [
     },
     {
         area: 'Design & UI/UX',
-        skills: ['Figma', 'Photoshop', 'Illustrator']
-    }
+        skills: ['Photoshop', 'Illustrator', 'InDesign']
+    },
+   
 ],
 experience: [
     {
