@@ -1,8 +1,38 @@
+---
+import { cvContent } from '../Content/texts';
+
+const { contact, profileText, activeSkills, dormantSkills, experience, education, about } =
+  cvContent;
+---
+
 <div id="container" class="size-full flex flex-row justify-center items-center">
   <main>
-    <section id="hero" class="text-center">
-      <h1 class="text-5xl font-logo">Yonderson</h1>
-      <p class="font-body text-base">Frontend developer focused on modern web design.</p>
+    <section id="hero" class="text-center h-screen flex flex-col justify-center items-center">
+      <h1 class="text-7xl font-logo">Yonderson</h1>
+      <p class="font-body text-xl">
+        Frontend developer <strong>focused</strong> on modern web design.
+      </p>
+    </section>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 max-w-3xl m-auto" />
+    <section id="profile" class="flex flex-col items-center max-w-3xl m-auto">
+      <h2 class="text-4xl font-logo">Profile</h2>
+      <p class="font-body text-lg text-justify">{profileText}</p>
+    </section>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 max-w-3xl m-auto" />
+    <section id="profile" class="flex flex-col items-center max-w-3xl m-auto">
+      <h2 class="text-4xl font-logo">Active skills</h2>
+      <ul class="font-body text-lg text-justify">
+        {activeSkills.map((skill) => <li class="list-disc">{skill}</li>)}
+      </ul>
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 max-w-3xl m-auto" />
+    </section>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 max-w-3xl m-auto" />
+    <section id="profile" class="flex flex-col items-center max-w-3xl m-auto">
+      <h2 class="text-4xl font-logo">Experience with</h2>
+      <ul class="font-body text-lg text-justify">
+        {dormantSkills.map((skill) => <li class="list-disc">{skill}</li>)}
+      </ul>
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 max-w-3xl m-auto" />
     </section>
   </main>
 </div>
