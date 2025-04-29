@@ -1,0 +1,22 @@
+---
+import { cvContent } from '../../Content/texts';
+import CvSection from './SectionWrapper.astro';
+
+const { contact } = cvContent;
+---
+
+<CvSection id="contact" title="Contact">
+  <p class="font-body text-xl">{contact.name}</p>
+  <p class="font-body text-xl">{contact.email}</p>
+  <p class="font-body text-xl">{contact.phone}</p>
+  <p class="font-body text-xl">{contact.location}</p>
+  <p class="font-body text-xl">{contact.linkedIn}</p>
+  <p class="font-body text-xl">
+    {contact.github.url}
+    <span>{contact.github.note}</span>
+  </p>
+  <p class="font-body text-xl">
+    {contact.website.url}
+    <span>{contact.website.note}</span>
+  </p>
+</CvSection>

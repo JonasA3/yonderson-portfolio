@@ -1,0 +1,11 @@
+---
+const { id, title } = Astro.props;
+---
+
+<section
+  id={id}
+  class="snap-start h-screen flex flex-col justify-center items-center text-center p-8"
+>
+  {title && <h2 class="text-4xl font-logo mb-4">{title}</h2>}
+  <slot />
+</section>

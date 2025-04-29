@@ -1,7 +1,9 @@
 ---
-import { cvContent } from '../Content/texts';
+import { cvContent } from '../../Content/texts';
+import ContactSection from './ContactSection.astro';
+import ProfileSection from './ProfileSection.astro';
 
-const { contact, profileText, activeSkills, dormantSkills, experience, education, about } =
+const { profileText, activeSkills, dormantSkills, experience, education, about } =
   cvContent;
 ---
 
@@ -14,37 +16,9 @@ const { contact, profileText, activeSkills, dormantSkills, experience, education
       </p>
     </section>
     
-    <section id="contact" class="snap-start h-screen flex flex-col justify-center items-center text-center">
-      <h1 class="text-7xl font-logo">Contact</h1>
-      <p class="font-body text-xl">
-        {contact.name}
-      </p>  
-      <p class="font-body text-xl">
-        {contact.email}
-      </p>
-      <p class="font-body text-xl">
-        {contact.phone}
-      </p>
-      <p class="font-body text-xl">
-        {contact.location}
-      </p>
-      <p class="font-body text-xl">
-        {contact.linkedIn}
-      </p>
-      <p class="font-body text-xl">
-        {contact.github.url}
-        <span>{contact.github.note}</span>
-      </p>
-      <p class="font-body text-xl">
-        {contact.website.url}
-        <span>{contact.website.note}</span>
-      </p>
-    </section>
+    <ContactSection />
   
-    <section id="profile" class="snap-start h-screen flex flex-col justify-center items-center text-center">
-      <h2 class="text-4xl font-logo">Profile</h2>
-      <p class="font-body text-lg text-justify">{profileText}</p>
-    </section>
+    <ProfileSection />
 
     <section id="active-skills" class="snap-start h-screen flex flex-col justify-center items-center text-center">
       <h2 class="text-4xl font-logo">Active skills</h2>
