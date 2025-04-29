@@ -26,7 +26,7 @@ for solving problems. My goal is to leverage my skills to create innovative solu
 activeSkills: [
     {
         area: 'Frontend',
-        skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'REST API', 'SOAP API', 'GraphQL']
+        skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'REST API', 'SOAP API', 'GraphQL']
     },
     {
         area: 'Backend',
@@ -97,21 +97,44 @@ experience: [
             'Participated in cross-functional teams following Agile workflows.'
         ]
     },
+    {
+        company: 'Rudholm Group',
+        position: 'Graphic Designer',
+        location: 'Borås',
+        startDate: '2006',
+        endDate: '2020',
+        workDone: [
+            'Branding and logo development for clients in the textile industry.',
+            'Product design collections.',
+            `Product photography and retouching.`,
+            'Created marketing materials including brochures, flyers, and ads.',
+        ]
+    },
 ],
 education: [
     {
         institution: 'Teknikhögskolan',
-        degree: 'Examination in .NET System Development',
+        type: 'YH Education (vocational)',
+        degree: 'Diploma in .NET System Development',
         startDate: '2020',
         endDate: '2023',
-        description: 'Focus: C#, ASP.NET, databases, frontend, Docker & Kubernetes'
+        description: 'Backend development with C#, ASP.NET, Entity Framework, SQL Server. Frontend development with React, JavaScript, HTML, CSS. Devops with Git, Azure, Docker.',
     },
     {
         institution: 'Folkuniversitetet YH',
-        degree: 'Examination in React Frontend Development',
+        type: 'Course',
+        degree: 'Certificate in React Frontend Development',
         startDate: '2022',
         endDate: '2022',
-        description: 'Focus: React, JavaScript, HTML, CSS, (Grade: VG)'
+        description: ' React, JavaScript, HTML, CSS'
+    },
+     {
+        institution: 'Udemy',
+        type: 'Courses',
+        degree: 'Proof of completion',
+        startDate: '2020',
+        endDate: 'Onging',
+        description: 'Fullstack Web Developer, Git/Github Bootcamp, Unit Testing in C#, JavaScript Pro, AstroJS 101'
     }
 ],
 about:
