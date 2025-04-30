@@ -1,98 +1,30 @@
 ---
-import { cvContent } from '../../Content/texts';
-import ContactSection from './ContactSection.astro';
-import ProfileSection from './ProfileSection.astro';
-
-const { profileText, activeSkills, dormantSkills, experience, education, about } =
-  cvContent;
+import ProfileSection from './Sections/ProfileSection.astro';
+import HeroSection from './Sections/HeroSection.astro';
+import AboutSection from './Sections/AboutSection.astro';
+import ActiveSkillsSection from './Sections/ActiveSkillsSection.astro';
+import ContactSection from './Sections/ContactSection.astro';
+import EducationSection from './Sections/EducationSection.astro';
+import ExperienceWithSection from './Sections/ExperienceWithSection.astro';
+import WorkExperienceSection from './Sections/WorkExperienceSection.astro';
 ---
 
 <div id="container" class="snap-y snap-mandatory overflow-y-scroll h-screen">
   <main>
-    <section id="hero" class="snap-start h-screen flex flex-col justify-center items-center text-center">
-      <h1 class="text-7xl font-logo">Yonderson</h1>
-      <p class="font-body text-xl">
-        Frontend developer <strong>focused</strong> on modern web design.
-      </p>
-    </section>
-    
+    <HeroSection />
+
     <ContactSection />
-  
+
     <ProfileSection />
 
-    <section id="active-skills" class="snap-start h-screen flex flex-col justify-center items-center text-center">
-      <h2 class="text-4xl font-logo">Active skills</h2>
-      <ul class="font-body text-lg text-justify">
-        {activeSkills.map((skillsList) => {
-          return (
-            <h3 class="text-2xl font-logo">{skillsList.area}</h3>
-            <ul class="list-none flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
-              {skillsList.skills.map((skill) => {
-                return <li class="list-none flex flex-row whitespace-nowrap">{skill}</li>;
-              })}
-            </ul>
-          );
-        })}
-      </ul>
-    
-    </section>
-  
-    <section id="experience-with" class="snap-start h-screen flex flex-col justify-center items-center text-center">
-      <h2 class="text-4xl font-logo">Experience with</h2>
-      <ul class="font-body text-lg text-justify">
-        {dormantSkills.map((skillsList) => {
-          return (
-            <h3 class="text-2xl font-logo">{skillsList.area}</h3>
-            <ul class="list-none flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
-              {skillsList.skills.map((skill) => {
-                return <li class="list-none flex flex-row whitespace-nowrap">{skill}</li>;
-              })}
-            </ul>
-          );
-        })}
-      </ul>
-    </section>
-  
-    <section id="work-experience" class="snap-start h-screen flex flex-col justify-center items-center text-center">
-      <h2 class="text-4xl font-logo">Work experience</h2>
-      <ul class="font-body text-lg text-justify">
-        {experience.map((job) => {
-          return (
-            <h3 class="text-2xl font-logo">{job.company}</h3>
-            <p class="text-lg font-body">{job.position}</p>
-            <p class="text-lg font-body">{job.startDate} - {job.endDate}</p>
-            <ul class="list-none flex flex-row space-x-4">
-              {job.workDone.map((responsibility) => {
-                return <li class="list-none">{responsibility}</li>;
-              })}
-            </ul>
-          );
-        })}
-      </ul>
-    </section>
-  
-    <section id="education" class="snap-start h-screen flex flex-col justify-center items-center text-center">
-      <h2 class="text-4xl font-logo">Education</h2>
-      <ul class="font-body text-lg text-justify">
-        {education.map((school) => {
-          return (
-            <h3 class="text-2xl font-logo">{school.institution}</h3>
-            <p class="text-lg font-body">{school.type}</p>
-            <p class="text-lg font-body">{school.degree}</p>
-            <p class="text-lg font-body">{school.description}</p>
-            <p class="text-lg font-body">{school.startDate} - {school.endDate}</p>
-          );
-        })}
-      </ul>
-    </section>
-  
-    <section id="about" class="snap-start h-screen flex flex-col justify-center items-center text-center">
-      <h2 class="text-4xl font-logo">About Jonas Andersson (me)</h2>
-      <ul class="font-body text-lg text-justify">
-        <img src="" alt="">
-        <p>{about}</p>
-      </ul>
-    </section>
-  
+    <ActiveSkillsSection />
+
+    <ExperienceWithSection />
+
+    <WorkExperienceSection />
+
+    <EducationSection />
+
+    <AboutSection />
   </main>
 </div>

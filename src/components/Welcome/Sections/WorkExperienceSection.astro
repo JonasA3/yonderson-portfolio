@@ -1,0 +1,23 @@
+---
+import { cvContent } from '../../../Content/texts';
+import CvSection from '../SectionWrapper.astro';
+
+const { experience } = cvContent;
+---
+
+<CvSection id="work-experience" title="Work Experience">
+<ul class="font-body text-lg text-justify">
+    {experience.map((job) => {
+      return (
+        <h3 class="text-2xl font-logo">{job.company}</h3>
+        <p class="text-lg font-body">{job.position}</p>
+        <p class="text-lg font-body">{job.startDate} - {job.endDate}</p>
+        <ul class="list-none flex flex-row space-x-4">
+          {job.workDone.map((responsibility) => {
+            return <li class="list-none">{responsibility}</li>;
+          })}
+        </ul>
+      );
+    })}
+  </ul>
+</CvSection>

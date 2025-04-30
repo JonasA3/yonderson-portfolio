@@ -1,0 +1,21 @@
+---
+import { cvContent } from '../../../Content/texts';
+import CvSection from '../SectionWrapper.astro';
+
+const { dormantSkills } = cvContent;
+---
+
+<CvSection id="experience-with" title="Experience with">
+    <ul class="font-body text-lg text-justify">
+        {dormantSkills.map((skillsList) => {
+          return (
+            <h3 class="text-2xl font-logo">{skillsList.area}</h3>
+            <ul class="list-none flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
+              {skillsList.skills.map((skill) => {
+                return <li class="list-none flex flex-row whitespace-nowrap">{skill}</li>;
+              })}
+            </ul>
+          );
+        })}
+      </ul>
+</CvSection>
