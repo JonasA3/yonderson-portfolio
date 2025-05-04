@@ -6,16 +6,24 @@ const { activeSkills } = cvContent;
 ---
 
 <CvSection id="active-skills" title="Active Skills" border={true}>
-    <ul class="font-body text-lg text-justify">
-        {activeSkills.map((skillsList) => {
-          return (
-            <h3 class="text-2xl font-logo">{skillsList.area}</h3>
-            <ul class="list-none flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
-              {skillsList.skills.map((skill) => {
-                return <li class="list-none flex flex-row whitespace-nowrap">{skill}</li>;
-              })}
-            </ul>
-          );
-        })}
-      </ul>
+  <p class="font-body text-lg text-justify">
+    I am currently focused on these technologies. I am actively using them in my projects and am
+    always looking to deepen my knowledge and skills in these areas.
+  </p>
+  <ul class="font-body text-lg text-left space-y-6">
+    {
+      activeSkills.map((skillsList) => (
+        <li>
+          <h3 class="text-2xl font-logo mb-2">{skillsList.area}</h3>
+          <ul class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
+            {skillsList.skills.map((skill) => (
+              <li class=" flex justify-center whitespace-nowrap bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-sm">
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ul>
 </CvSection>

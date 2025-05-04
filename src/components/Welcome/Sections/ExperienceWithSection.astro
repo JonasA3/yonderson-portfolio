@@ -6,13 +6,18 @@ const { dormantSkills } = cvContent;
 ---
 
 <CvSection id="experience-with" title="Experience with" border={true} border={true}>
+  <p class="font-body text-lg text-justify">
+   I have experience with these technologies, but they are not my primary focus at the moment. I am open to revisiting them for a refresh if needed.
+  </p>
     <ul class="font-body text-lg text-justify">
         {dormantSkills.map((skillsList) => {
           return (
             <h3 class="text-2xl font-logo">{skillsList.area}</h3>
-            <ul class="list-none flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
+            <ul class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
               {skillsList.skills.map((skill) => {
-                return <li class="list-none flex flex-row whitespace-nowrap">{skill}</li>;
+                return  <li class=" flex justify-center whitespace-nowrap bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-sm">
+                  {skill}
+                </li>;
               })}
             </ul>
           );
