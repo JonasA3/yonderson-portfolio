@@ -1,4 +1,5 @@
 /* global document */
+/* global window */
 
 export function initScrollFadeObservers() {
   if (typeof document === 'undefined') return; // SSR guard
@@ -18,4 +19,8 @@ export function initScrollFadeObservers() {
     updateFades();
   });
 }
-initScrollFadeObservers();
+
+// ✅ Only run on the client, and only if desktop or larger
+if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+  initScrollFadeObservers();
+}
