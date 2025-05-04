@@ -11,9 +11,9 @@ const { id, title, border = true, scroll = false } = Astro.props;
   {
     scroll ? (
       <div
-        class={`w-full mb-4 ${border ? 'border-y-4 border-gray-300' : ''} p-8 flex flex-col items-center`}
+        class={`w-full mb-4 ${border ? 'md:border-y-4 border-gray-300' : ''} p-8 flex flex-col items-center`}
       >
-        <div class="scroll-fade-wrapper relative md:max-h-[60vh] w-full">
+        <div class="scroll-fade-wrapper hidden md:block relative max-h-[60vh] w-full">
           <div class="fade-top absolute top-0 left-0 w-full h-10 pointer-events-none z-10" />
           <div class="fade-bottom absolute bottom-0 left-0 w-full h-10 pointer-events-none z-10" />
 
@@ -21,10 +21,14 @@ const { id, title, border = true, scroll = false } = Astro.props;
             <slot />
           </div>
         </div>
+
+        <div class="block md:hidden w-full">
+          <slot />
+        </div>
       </div>
     ) : (
       <div
-        class={`w-full mb-4 ${border ? 'border-y-4 border-gray-300' : ''} p-8 flex flex-col items-center`}
+        class={`w-full mb-4 ${border ? 'md:border-y-4 border-gray-300' : ''} p-8 flex flex-col items-center`}
       >
         <slot />
       </div>
