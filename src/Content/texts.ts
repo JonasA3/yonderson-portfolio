@@ -38,7 +38,7 @@ activeSkills: [
     },    
     {
         area: 'Design & UI/UX',
-        skills: ['Figma', 'Photoshop', 'Illustrator']
+        skills: ['Figma']
     },
     {
         area: 'Other',
