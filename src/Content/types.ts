@@ -15,8 +15,7 @@ export type Experience = {
     institution: string;
     type: string;
     degree: string;
-    startDate: string;
-    endDate: string;
+    duration: string;
     description: string;
   };
 

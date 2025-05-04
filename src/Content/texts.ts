@@ -116,24 +116,23 @@ education: [
         institution: 'Teknikhögskolan',
         type: 'YH Education (vocational)',
         degree: 'Diploma in .NET System Development',
-        startDate: '2020',
-        endDate: '2023',
-        description: 'Backend development with C#, ASP.NET, Entity Framework, SQL Server. Frontend development with React, JavaScript, HTML, CSS. Devops with Git, Azure, Docker.',
+        duration: '2 years (2021-2023)',
+        description: `Backend development with C#, ASP.NET, Entity Framework, SQL Server. 
+                      Frontend development with React, JavaScript, HTML, CSS. 
+                      Devops with Git, Azure, Docker.`,
     },
     {
         institution: 'Folkuniversitetet YH',
         type: 'Course',
         degree: 'Certificate in React Frontend Development',
-        startDate: '2022',
-        endDate: '2022',
+        duration: '4 weeks (2022)',
         description: ' React, JavaScript, HTML, CSS'
     },
      {
         institution: 'Udemy',
         type: 'Courses',
         degree: 'Proof of completion',
-        startDate: '2020',
-        endDate: 'Onging',
+        duration: 'Ongoing',
         description: 'Fullstack Web Developer, Git/Github Bootcamp, Unit Testing in C#, JavaScript Pro, AstroJS 101'
     }
 ],
