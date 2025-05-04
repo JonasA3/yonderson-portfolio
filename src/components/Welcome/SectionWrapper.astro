@@ -4,7 +4,7 @@ const { id, title, border } = Astro.props;
 
 <section
   id={id}
-  class="snap-start h-screen flex flex-col justify-center items-center text-center p-8 max-w-[800px] mx-auto"
+  class="cv-section md:snap-start md:h-screen flex flex-col justify-center items-center text-center p-8 max-w-[800px] mx-auto relative"
 >
   {title && <h2 class="text-4xl font-logo mb-4">{title}</h2>}
   {
