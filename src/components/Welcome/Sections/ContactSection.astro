@@ -5,7 +5,7 @@ import CvSection from '../SectionWrapper.astro';
 const { contact } = cvContent;
 ---
 
-<CvSection id="contact" title="Contact">
+<CvSection id="contact" title="Contact" border={true}>
   <ul class="text-left space-y-2 font-body text-xl">
     <li><span class="font-semibold">Name:</span> {contact.name}</li>
     <li>
@@ -20,7 +20,8 @@ const { contact } = cvContent;
     <li>
       <span class="font-semibold">LinkedIn:</span>
       <a href={contact.linkedIn} class="underline" target="_blank" rel="noopener noreferrer"
-        >{contact.linkedIn}</a>
+        >{contact.linkedIn}</a
+      >
     </li>
     <li>
       <span class="font-semibold">GitHub:</span>

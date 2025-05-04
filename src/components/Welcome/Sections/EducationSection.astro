@@ -5,16 +5,26 @@ import CvSection from '../SectionWrapper.astro';
 const { education } = cvContent;
 ---
 
-<CvSection id="education" title="Education">
-<ul class="font-body text-lg text-justify">
-    {education.map((school) => {
-      return (
-        <h3 class="text-2xl font-logo">{school.institution}</h3>
-        <p class="text-lg font-body">{school.type}</p>
-        <p class="text-lg font-body">{school.degree}</p>
-        <p class="text-lg font-body">{school.description}</p>
-        <p class="text-lg font-body">{school.startDate} - {school.endDate}</p>
-      );
-    })}
+<CvSection id="education" title="Education" border={true}>
+  <ul class="space-y-6 font-body text-lg text-left max-w-[500px] mx-auto">
+    {
+      education.map((school) => (
+        <li>
+          <h3 class="text-2xl font-logo mb-1">{school.institution}</h3>
+          <p>
+            <span class="font-semibold">Type:</span> {school.type}
+          </p>
+          <p>
+            <span class="font-semibold">Degree:</span> {school.degree}
+          </p>
+          <p>
+            <span class="font-semibold">Focus:</span> {school.description}
+          </p>
+          <p>
+            <span class="font-semibold">Duration:</span> {school.duration}
+          </p>
+        </li>
+      ))
+    }
   </ul>
 </CvSection>

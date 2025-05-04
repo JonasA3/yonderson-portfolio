@@ -5,7 +5,7 @@ import CvSection from '../SectionWrapper.astro';
 const { dormantSkills } = cvContent;
 ---
 
-<CvSection id="experience-with" title="Experience with">
+<CvSection id="experience-with" title="Experience with" border={true} border={true}>
     <ul class="font-body text-lg text-justify">
         {dormantSkills.map((skillsList) => {
           return (
