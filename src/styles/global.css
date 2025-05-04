@@ -16,6 +16,31 @@ body {
   margin: 0;
 }
 
+.scroll-fade-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, white);
+  z-index: 10;
+}
+.fade-top {
+  background: linear-gradient(to bottom, white, transparent);
+}
+
+.fade-bottom {
+  background: linear-gradient(to top, white, transparent);
+}
+
+/* When hidden, fade divs go transparent */
+.fade-hidden {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
 @layer base {
   html {
     font-size: 16px; /* Base size for rems (1rem = 16px) */
