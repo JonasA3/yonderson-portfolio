@@ -5,30 +5,23 @@ import CvSection from '../SectionWrapper.astro';
 const { experience } = cvContent;
 ---
 
-<CvSection id="work-experience" title="Work Experience" border={true}>
-  <div class="scroll-fade-wrapper relative md:max-h-[60vh]">
-    <div class="fade-top absolute top-0 left-0 w-full h-10 pointer-events-none z-10"></div>
-    <div class="fade-bottom absolute bottom-0 left-0 w-full h-10 pointer-events-none z-10"></div>
-
-    <div class="scroll-fade-target overflow-y-auto pr-2 max-h-[60vh]">
-      <ul class="space-y-6 font-body text-lg text-left">
-        {
-          experience.map((job) => (
-            <li>
-              <h3 class="text-2xl font-logo mb-1">{job.company}</h3>
-              <p>
-                <span class="font-semibold">Role:</span> {job.position} &nbsp;|&nbsp;
-                <span class="font-semibold">Duration:</span> {job.startDate} – {job.endDate}
-              </p>
-              <ul class="list-disc pl-6 mt-2 space-y-1">
-                {job.workDone.map((task) => (
-                  <li>{task}</li>
-                ))}
-              </ul>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </div>
+<CvSection id="work-experience" title="Work Experience" border={true} scroll={true}>
+  <ul class="space-y-6 font-body text-lg text-left">
+    {
+      experience.map((job) => (
+        <li>
+          <h3 class="text-2xl font-logo mb-1">{job.company}</h3>
+          <p>
+            <span class="font-semibold">Role:</span> {job.position} &nbsp;|&nbsp;
+            <span class="font-semibold">Duration:</span> {job.startDate} – {job.endDate}
+          </p>
+          <ul class="list-disc pl-6 mt-2 space-y-1">
+            {job.workDone.map((task) => (
+              <li>{task}</li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ul>
 </CvSection>

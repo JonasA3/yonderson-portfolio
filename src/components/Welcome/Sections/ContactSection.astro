@@ -5,7 +5,7 @@ import CvSection from '../SectionWrapper.astro';
 const { contact } = cvContent;
 ---
 
-<CvSection id="contact" title="Contact" border={true}>
+<CvSection id="contact" title="Contact" border={true} scroll={false}>
   <ul class="text-left space-y-2 font-body text-xl">
     <li><span class="font-semibold">Name:</span> {contact.name}</li>
     <li>

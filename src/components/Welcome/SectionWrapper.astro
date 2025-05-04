@@ -1,5 +1,5 @@
 ---
-const { id, title, border } = Astro.props;
+const { id, title, border = true, scroll = false } = Astro.props;
 ---
 
 <section
@@ -7,13 +7,25 @@ const { id, title, border } = Astro.props;
   class="cv-section md:snap-start md:h-screen flex flex-col justify-center items-center text-center p-8 max-w-[800px] mx-auto relative"
 >
   {title && <h2 class="text-4xl font-logo mb-4">{title}</h2>}
+
   {
-    border ? (
-      <div class="border-b-4 border-t-4 border-gray-300 w-full mb-4 p-8 flex flex-col items-center">
-        <slot />
+    scroll ? (
+      <div
+        class={`w-full mb-4 ${border ? 'border-y-4 border-gray-300' : ''} p-8 flex flex-col items-center`}
+      >
+        <div class="scroll-fade-wrapper relative md:max-h-[60vh] w-full">
+          <div class="fade-top absolute top-0 left-0 w-full h-10 pointer-events-none z-10" />
+          <div class="fade-bottom absolute bottom-0 left-0 w-full h-10 pointer-events-none z-10" />
+
+          <div class="scroll-fade-target overflow-y-auto pr-2 max-h-[60vh]">
+            <slot />
+          </div>
+        </div>
       </div>
     ) : (
-      <div class="w-full mb-4 p-8 flex flex-col items-center">
+      <div
+        class={`w-full mb-4 ${border ? 'border-y-4 border-gray-300' : ''} p-8 flex flex-col items-center`}
+      >
         <slot />
       </div>
     )
