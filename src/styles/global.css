@@ -5,6 +5,25 @@
 @tailwind utilities;
 
 /* Global styles */
+:root {
+  /* Light theme (default) */
+  --color-bg: #ECF0F1;
+  --color-fg: #2C3E50;
+  --color-accent: #1ABC9C;
+  --color-accent-muted: #16A085;
+  --color-header: #34495E;
+  --color-footer: #2C3E50;
+}
+
+[data-theme="dark"] {
+  --color-bg: #2C3E50;
+  --color-fg: #ECF0F1;
+  --color-accent: #1ABC9C;
+  --color-accent-muted: #16A085;
+  --color-header: #34495E;
+  --color-footer: #2C3E50;
+}
+
 html {
   scroll-behavior: smooth;
 }
