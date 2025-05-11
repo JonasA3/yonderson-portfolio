@@ -11,7 +11,10 @@
     "lint": "eslint . --ext .js,.ts,.astro"
   },
   "dependencies": {
-    "astro": "^5.7.4"
+    "@astrojs/svelte": "^7.0.13",
+    "astro": "^5.7.4",
+    "svelte": "^5.28.2",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.2",
