@@ -7,12 +7,12 @@
 /* Global styles */
 :root {
   /* Light theme (default) */
-  --color-bg: #ECF0F1;
+  --color-bg: #fcfcfc;
   --color-fg: #2C3E50;
   --color-accent: #1ABC9C;
   --color-accent-muted: #16A085;
-  --color-header: #34495E;
-  --color-footer: #2C3E50;
+  --color-border: #ECF0F1;
+  --color-skill-bg: #e9e9e9;
 }
 
 [data-theme="dark"] {
@@ -20,8 +20,8 @@
   --color-fg: #ECF0F1;
   --color-accent: #1ABC9C;
   --color-accent-muted: #16A085;
-  --color-header: #34495E;
-  --color-footer: #2C3E50;
+  --color-border: #34495E;
+  --color-skill-bg: #34495E;
 }
 
 html {
@@ -32,7 +32,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-  margin: 0;
 }
 
 .scroll-fade-bottom::after {
@@ -43,15 +42,15 @@ body {
   height: 100px;
   width: 100%;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, white);
+  background: linear-gradient(to bottom, transparent, var(--color-bg));
   z-index: 10;
 }
 .fade-top {
-  background: linear-gradient(to bottom, white, transparent);
+  background: linear-gradient(to bottom, var(--color-bg), transparent);
 }
 
 .fade-bottom {
-  background: linear-gradient(to top, white, transparent);
+  background: linear-gradient(to top,  var(--color-bg), transparent);
 }
 
 /* When hidden, fade divs go transparent */
