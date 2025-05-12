@@ -1,0 +1,16 @@
+---
+import ThemeToggle from './ThemeToggle.svelte';
+---
+
+<header>
+  <div
+    class="flex items-center justify-between bg-bg text-fg hover:text-bg p-4 border-b-2 border-border hover:bg-fg transition-colors duration-300"
+  >
+    <div>
+      <p>MENU</p>
+    </div>
+    <div>
+      <ThemeToggle client:load />
+    </div>
+  </div>
+</header>
