@@ -43,7 +43,8 @@
 <div class="dropdown">
   <button
     aria-haspopup="true"
-    aria-expanded="false"
+    aria-expanded={show}
+    aria-controls="theme-menu"
     class="px-3 py-1 text-md"
     on:click={() => (show = !show)}
   >
