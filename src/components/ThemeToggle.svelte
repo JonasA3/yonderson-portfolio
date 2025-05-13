@@ -38,9 +38,26 @@
     applyTheme(current);
     watchSystemTheme();
   });
+
+  // Custom action to detect clicks outside
+  function clickOutside(node) {
+    const handleClick = (event) => {
+      if (!node.contains(event.target)) {
+        show = false;
+      }
+    };
+
+    document.addEventListener('click', handleClick, true);
+
+    return {
+      destroy() {
+        document.removeEventListener('click', handleClick, true);
+      },
+    };
+  }
 </script>
 
-<div class="dropdown">
+<div class="dropdown" use:clickOutside>
   <button
     aria-haspopup="true"
     aria-expanded={show}
@@ -51,13 +68,13 @@
     <span class="flex items-center gap-2">
       THEME
       {#if current === 'light'}
-        Light
+        LIGHT
         <Sun class="w-5 h-5" />
       {:else if current === 'dark'}
         DARK
         <Moon class="w-5 h-5" />
       {:else}
-        System
+        SYSTEM
         <Monitor class="w-5 h-5" />
       {/if}
     </span>
