@@ -1,22 +1,101 @@
 <script>
   import { onMount } from 'svelte';
+  import { Sun, Moon, Monitor } from 'lucide-svelte';
 
-  let isDark = false;
+  // Possible modes
+  const options = ['light', 'dark', 'system'];
+  let current = 'system'; // default fallback
+  let show = false;
 
-  const toggleTheme = () => {
-    isDark = !isDark;
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  const applyTheme = (mode) => {
+    if (mode === 'system') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', mode);
+    }
   };
 
-  // On mount, sync with localStorage
+  const setTheme = (mode) => {
+    current = mode;
+    localStorage.setItem('theme', mode);
+    applyTheme(mode);
+  };
+
+  // Watch for OS theme changes if using 'system'
+  const watchSystemTheme = () => {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'system') {
+        applyTheme('system');
+      }
+    });
+  };
+
   onMount(() => {
-    const stored = localStorage.getItem('theme');
-    isDark = stored === 'dark';
-    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    const stored = localStorage.getItem('theme') || 'system';
+    current = options.includes(stored) ? stored : 'system';
+    applyTheme(current);
+    watchSystemTheme();
   });
 </script>
 
-<button on:click={toggleTheme}>
-  {isDark ? '🌙 Dark' : '☀️ Light'}
-</button>
+<div class="dropdown">
+  <button
+    aria-haspopup="true"
+    aria-expanded="false"
+    class="px-3 py-1 text-md"
+    on:click={() => (show = !show)}
+  >
+    <span class="flex items-center gap-2">
+      THEME
+      {#if current === 'light'}
+        Light
+        <Sun class="w-5 h-5" />
+      {:else if current === 'dark'}
+        DARK
+        <Moon class="w-5 h-5" />
+      {:else}
+        System
+        <Monitor class="w-5 h-5" />
+      {/if}
+    </span>
+  </button>
+
+  {#if show}
+    <div class="menu rounded shadow bg-bg text-fg">
+      {#each options as opt}
+        <button
+          on:click={() => {
+            setTheme(opt);
+            show = false;
+          }}
+          class="capitalize"
+          aria-pressed={current === opt}
+        >
+          {#if opt === 'light'}
+            <Sun class="w-5 h-5" /> Light
+          {/if}
+          {#if opt === 'dark'}
+            <Moon class="w-5 h-5" /> Dark
+          {/if}
+          {#if opt === 'system'}
+            <Monitor class="w-5 h-5" /> System
+          {/if}
+        </button>
+      {/each}
+    </div>
+  {/if}
+</div>
+
+<style>
+  .dropdown {
+    @apply relative inline-block;
+  }
+  .menu {
+    @apply absolute left-[15px] mt-2 w-32 rounded bg-bg shadow z-50;
+  }
+  .menu button {
+    @apply flex justify-start gap-2 w-full text-left text-fg px-4 py-2;
+  }
+</style>
