@@ -1,13 +1,18 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { Sun, Moon, Monitor } from 'lucide-svelte';
 
   // Possible modes
-  const options = ['light', 'dark', 'system'];
-  let current = 'system'; // default fallback
+  type ThemeMode = 'light' | 'dark' | 'system';
+  let options: ThemeMode[] = ['light', 'dark', 'system'];
+  // Default mode
+  let defaultMode: ThemeMode = 'system';
+  // Current mode
+  // This will be set to 'system' if the user has not set a preference
+  let current: ThemeMode = 'system'; // default fallback
   let show = false;
 
-  const applyTheme = (mode) => {
+  const applyTheme = (mode: ThemeMode) => {
     if (mode === 'system') {
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
@@ -16,7 +21,7 @@
     }
   };
 
-  const setTheme = (mode) => {
+  const setTheme = (mode: ThemeMode) => {
     current = mode;
     localStorage.setItem('theme', mode);
     applyTheme(mode);
@@ -34,15 +39,15 @@
 
   onMount(() => {
     const stored = localStorage.getItem('theme') || 'system';
-    current = options.includes(stored) ? stored : 'system';
+    current = options.includes(stored as ThemeMode) ? (stored as ThemeMode) : 'system';
     applyTheme(current);
     watchSystemTheme();
   });
 
   // Custom action to detect clicks outside
-  function clickOutside(node) {
-    const handleClick = (event) => {
-      if (!node.contains(event.target)) {
+  function clickOutside(node: HTMLElement) {
+    const handleClick = (event: MouseEvent) => {
+      if (!node.contains(event.target as Node)) {
         show = false;
       }
     };
@@ -50,7 +55,7 @@
     document.addEventListener('click', handleClick, true);
 
     return {
-      destroy() {
+      destroy(): void {
         document.removeEventListener('click', handleClick, true);
       },
     };
