@@ -67,7 +67,7 @@
     aria-haspopup="true"
     aria-expanded={show}
     aria-controls="theme-menu"
-    class="px-3 py-1 text-md"
+    class="px-1 py-1 text-md"
     on:click={() => (show = !show)}
   >
     <div class="button-content">
@@ -116,12 +116,12 @@
     @apply relative inline-block;
   }
   .menu {
-    @apply absolute left-[15px] mt-2 w-32 rounded bg-bg shadow z-50;
+    @apply absolute flex flex-col gap-5 left-[15px] mt-2 w-32 rounded bg-bg shadow z-50;
   }
   .menu button {
-    @apply flex justify-start gap-2 w-full text-left text-fg px-4 py-2;
+    @apply flex justify-start gap-2 w-full text-left text-fg;
   }
   .button-content {
-    @apply flex items-center gap-1;
+    @apply flex items-center gap-2;
   }
 </style>
