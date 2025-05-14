@@ -1,14 +1,26 @@
 ---
 import CvSection from '../SectionWrapper.astro';
+import { ChevronsDown } from 'lucide-static';
+import Icon from '../../Icon.astro';
 ---
 
 <CvSection id="hero" title="" border={false} scroll={false}>
   <div
-    class="h-screen flex flex-col items-center justify-start md:justify-center text-center mt-[25vh] md:mt-[-10vh] gap-4"
+    class="relative h-screen flex flex-col items-center justify-start md:justify-center text-center mt-[25vh] md:mt-[-10vh] gap-4"
   >
     <h1 class="text-7xl font-logo">Yonderson</h1>
     <p class="font-body text-xl">
       Frontend developer <strong>focused</strong> on my web design.
     </p>
+    <div class="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-center gap-2">
+      <p class="mb-1 text-md">SCROLL TO READ CV</p>
+      <Icon
+        svg={ChevronsDown}
+        size="lg"
+        color="inherit"
+        class="text-fg motion-safe:animate-bounce"
+        aria-label="Scroll down"
+      />
+    </div>
   </div>
 </CvSection>
