@@ -70,7 +70,7 @@
     class="px-3 py-1 text-md"
     on:click={() => (show = !show)}
   >
-    <span class="flex items-center gap-2">
+    <div class="button-content">
       THEME
       {#if current === 'light'}
         LIGHT
@@ -82,7 +82,7 @@
         SYSTEM
         <Monitor class="w-5 h-5" />
       {/if}
-    </span>
+    </div>
   </button>
 
   {#if show}
@@ -120,5 +120,8 @@
   }
   .menu button {
     @apply flex justify-start gap-2 w-full text-left text-fg px-4 py-2;
+  }
+  .button-content {
+    @apply flex items-center gap-1;
   }
 </style>

@@ -8,14 +8,6 @@ const { contact } = cvContent;
 <CvSection id="contact" title="Contact" border={true} scroll={false}>
   <ul class="text-left space-y-2 font-body text-xl">
     <li><span class="font-semibold">Name:</span> {contact.name}</li>
-    <li>
-      <span class="font-semibold">Email:</span>
-      <a href={`mailto:${contact.email}`} class="underline">{contact.email}</a>
-    </li>
-    <li>
-      <span class="font-semibold">Phone:</span>
-      <a href={`tel:${contact.phone.replace(/\s/g, '')}`} class="underline">{contact.phone}</a>
-    </li>
     <li><span class="font-semibold">Location:</span> {contact.location}</li>
     <li>
       <span class="font-semibold">LinkedIn:</span>
@@ -29,13 +21,6 @@ const { contact } = cvContent;
         >{contact.github.url}</a
       >
       <span class="italic text-base">({contact.github.note})</span>
-    </li>
-    <li>
-      <span class="font-semibold">Website:</span>
-      <a href={contact.website.url} class="underline" target="_blank" rel="noopener noreferrer"
-        >{contact.website.url}</a
-      >
-      <span class="italic text-base">({contact.website.note})</span>
     </li>
   </ul>
 </CvSection>

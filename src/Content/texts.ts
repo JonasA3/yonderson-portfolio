@@ -5,7 +5,7 @@ contact: {
 name: 'Jonas Andersson',
 title: 'Web Developer',
 location: 'Borås, Sweden',
-email: 'jonas@kippingmonkey.se',
+email: 'jonas@yonderson.se',
 phone: '0703-55 49 88',
 linkedIn: 'https://linkedin.com/in/jonas-andersson-57245727/',
 github: { 
