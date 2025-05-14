@@ -1,0 +1,38 @@
+---
+export interface IconProps {
+  svg: string;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  color?: 'current' | 'white' | 'black' | 'fg' | 'accent';
+  class?: string;
+}
+
+// First, cast Astro.props to IconProps
+const props = Astro.props as IconProps;
+
+// Then destructure
+const { svg, size = 'md', color = 'current', class: className = '' } = props;
+
+const sizeMap = {
+  sm: 'w-4 h-4',
+  md: 'w-6 h-6',
+  lg: 'w-8 h-8',
+  xl: 'w-10 h-10',
+} as const;
+
+const colorMap = {
+  current: 'text-current',
+  white: 'text-white',
+  black: 'text-black',
+  fg: 'text-fg',
+  accent: 'text-accent',
+} as const;
+---
+
+<div
+  class={`inline-flex items-center justify-center ${sizeMap[size]} ${colorMap[color]} ${className}`}
+>
+  <div
+    class="w-full h-full [&>svg]:w-full [&>svg]:h-full [&>svg]:!w-full [&>svg]:!h-full"
+    set:html={svg}
+  />
+</div>
