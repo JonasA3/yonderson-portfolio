@@ -9,7 +9,7 @@ email: 'jonas@yonderson.se',
 phone: '0703-55 49 88',
 linkedIn: {
     url: 'https://linkedin.com/in/jonas-andersson-57245727/',
-    note: 'Click below to see my LinkedIn profile'},
+    note: 'Click below to go to my LinkedIn profile'},
 github: { 
     url: 'https://github.com/JonasA3',
     note: 'More to come...'
