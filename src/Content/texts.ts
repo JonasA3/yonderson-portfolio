@@ -7,7 +7,9 @@ title: 'Web Developer',
 location: 'Borås, Sweden',
 email: 'jonas@yonderson.se',
 phone: '0703-55 49 88',
-linkedIn: 'https://linkedin.com/in/jonas-andersson-57245727/',
+linkedIn: {
+    url: 'https://linkedin.com/in/jonas-andersson-57245727/',
+    note: 'Click below to see my LinkedIn profile'},
 github: { 
     url: 'https://github.com/JonasA3',
     note: 'More to come...'
@@ -19,10 +21,8 @@ website: {
 profilePicture: 'https://avatars.githubusercontent.com/u/1025461?v=4',
 },
 profileText: 
-`Graphic designer turned developer with a strong interest in UI/UX.
-Skilled in building responsive web applications using React, TypeScript and .NET.
-Known for a calm and collaborative work style, a hunger for learning, and a love
-for solving problems. My goal is to leverage my skills to create innovative solutions that make a positive impact on people's lives.`,
+`Graphic designer turned developer with a strong interest in UI/UX. Skilled in building responsive web applications using React, TypeScript and .NET. Known for a calm and collaborative work style, a hunger for learning, and a love for solving problems. My goal is to leverage my skills to create innovative solutions that make a positive impact on people's lives.
+\nFor the purpose of showing some of my code I have a special profile on GitHub where I will show a selection of personal projects. Click below to go to there.`,
 activeSkills: [
     {
         area: 'Frontend',

@@ -1,26 +1,33 @@
 ---
 import { cvContent } from '../../../Content/texts';
 import CvSection from '../SectionWrapper.astro';
+import { Linkedin } from 'lucide-static';
+import Icon from '../../Icon.astro';
 
-const { contact } = cvContent;
+const {
+  contact: {
+    linkedIn: { url: linkedIn, note },
+  },
+} = cvContent;
 ---
 
-<CvSection id="contact" title="Contact" border={true} scroll={false}>
-  <ul class="text-left space-y-2 font-body text-xl">
-    <li><span class="font-semibold">Name:</span> {contact.name}</li>
-    <li><span class="font-semibold">Location:</span> {contact.location}</li>
-    <li>
-      <span class="font-semibold">LinkedIn:</span>
-      <a href={contact.linkedIn} class="underline" target="_blank" rel="noopener noreferrer"
-        >{contact.linkedIn}</a
-      >
-    </li>
-    <li>
-      <span class="font-semibold">GitHub:</span>
-      <a href={contact.github.url} class="underline" target="_blank" rel="noopener noreferrer"
-        >{contact.github.url}</a
-      >
-      <span class="italic text-base">({contact.github.note})</span>
-    </li>
-  </ul>
+<CvSection id="contact" title="Connect with me" border={true} scroll={false}>
+  <p class="font-body text-lg text-justify whitespace-pre-line">{note}</p>
+  <a
+    href={linkedIn}
+    class="flex items-center justify-center mt-4 text-lg font-semibold text-fg hover:text-accent"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <div class="flex items-center justify-center gap-2 hover:text-accent">
+      <Icon
+        svg={Linkedin}
+        size="md"
+        color="inherit"
+        class="text-inherit hover:text-accent"
+        aria-label="Github"
+      />
+      <p class="font-body text-lg hover:text-accent pt-2">LINKEDIN</p>
+    </div>
+  </a>
 </CvSection>

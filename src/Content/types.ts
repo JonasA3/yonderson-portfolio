@@ -25,7 +25,10 @@ export type Experience = {
     location: string;
     email: string;
     phone: string;
-    linkedIn: string;
+    linkedIn: {
+      url: string;
+      note: string;
+    };
     github: {
       url: string;
       note: string;
