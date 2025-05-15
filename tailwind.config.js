@@ -17,6 +17,7 @@ module.exports = {
         focus: 'var(--color-focus)',
         border: 'var(--color-border)',
         skillBg: 'var(--color-skill-bg)',
+        divider: 'var(--color-divider)',
       },
     },
   },

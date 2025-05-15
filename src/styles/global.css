@@ -13,6 +13,7 @@
   --color-accent-muted: #16A085;
   --color-border: #ECF0F1;
   --color-skill-bg: #e9e9e9;
+  --color-divider: #D1D5DB;
 }
 
 [data-theme="dark"] {
@@ -22,6 +23,7 @@
   --color-accent-muted: #16A085;
   --color-border: #34495E;
   --color-skill-bg: #34495E;
+  --color-divider: #1ABC9C;
 }
 
 html {
