@@ -1,10 +1,10 @@
 ---
-const { id, title, border = true, scroll = false } = Astro.props;
+const { id, title, border = true, scroll = false, last = false } = Astro.props;
 ---
 
 <section
   id={id}
-  class="cv-section md:snap-start md:h-screen flex flex-col justify-center items-center text-center p-0 md:p-8 max-w-[800px] mx-auto relative"
+  class=`cv-section md:snap-start md:h-screen flex flex-col justify-center items-center text-center p-0 md:p-8 max-w-[800px] mx-auto relative after:block after:w-[95%] after:border-b-2 after:border-accent after:mb-10 after:mx-auto md:after:content-none ${ last ? 'after:content-none' : ''}`
 >
   {title && <h2 class="text-4xl font-logo md:mb-4">{title}</h2>}
 
