@@ -45,18 +45,26 @@
   });
 
   // Custom action to detect clicks outside
+  //DEV NOTE: This is a workaround for a Svelte/TS syntax bug not DRY but works
   function clickOutside(node: HTMLElement) {
     const handleClick = (event: MouseEvent) => {
       if (!node.contains(event.target as Node)) {
         show = false;
       }
     };
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        show = false;
+      }
+    };
 
     document.addEventListener('click', handleClick, true);
+    document.addEventListener('keydown', handleKeydown, true);
 
     return {
       destroy(): void {
         document.removeEventListener('click', handleClick, true);
+        document.removeEventListener('keydown', handleKeydown, true);
       },
     };
   }
