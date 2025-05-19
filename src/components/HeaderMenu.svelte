@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Menu, ChevronRight, ChevronLeft } from 'lucide-svelte';
+  import { preventDefault } from 'svelte/legacy';
 
   type MenuState = 'root' | 'cv' | 'portfolio' | 'language';
 
@@ -40,23 +41,24 @@
     focusedIndex = 0;
   }
 
-  function handleKeydown(e: KeyboardEvent) {
-    const listLength = currentList().length;
-    if (e.key === 'ArrowDown') {
-      focusedIndex = (focusedIndex + 1) % listLength;
-    }
-    if (e.key === 'ArrowUp') {
-      focusedIndex = (focusedIndex - 1 + listLength) % listLength;
-    }
-    if (e.key === 'Escape') {
-      if (menuState !== 'root') {
-        back();
-        e.preventDefault();
-      } else {
-        show = false;
-      }
-    }
-  }
+  //DEV NOTE: Might use this in the future, right now tab navigation is enough
+  // function handleKeydown(e: KeyboardEvent) {
+  //   const listLength = currentList().length;
+  //   if (e.key === 'ArrowDown') {
+  //     focusedIndex = (focusedIndex + 1) % listLength;
+  //   }
+  //   if (e.key === 'ArrowUp') {
+  //     focusedIndex = (focusedIndex - 1 + listLength) % listLength;
+  //   }
+  //   if (e.key === 'Escape') {
+  //     if (menuState !== 'root') {
+  //       back();
+  //       e.preventDefault();
+  //     } else {
+  //       show = false;
+  //     }
+  //   }
+  // }
 
   function currentList() {
     if (menuState === 'cv') return cvItems;
@@ -92,15 +94,20 @@
 </script>
 
 <!-- The TS error is a Svelte/TS syntax bug and cannot be commented away -->
-<div class="dropdown" use:clickOutside>
+<div class="dropdown" role="menu" tabindex="0" use:clickOutside>
   <button
     aria-haspopup="true"
     aria-expanded={show}
     class="px-1 py-1 text-md"
     on:click={() => {
+      console.log('Button clicked');
       show = !show;
       focusedIndex = 0;
       menuState = 'root';
+    }}
+    on:focus={() => {
+      show = true;
+      focusedIndex = 0;
     }}
   >
     <span class="flex items-center gap-2">
@@ -111,67 +118,72 @@
 
   {#if show}
     <nav class="menu motion-safe:transition-all motion-safe:duration-300">
-      <!-- Back button -->
-      {#if menuState !== 'root'}
-        <button on:click={back} class="flex items-center gap-2 text-sm mb-2">
-          <ChevronLeft class="w-4 h-4" /> Back
-        </button>
-      {/if}
+      {#key menuState}
+        <!-- Back button -->
+        {#if menuState !== 'root'}
+          <button on:click={back} class="flex items-center gap-2 text-sm mb-2">
+            <ChevronLeft class="w-4 h-4" /> Back
+          </button>
+        {/if}
 
-      <!-- Render current menu level -->
-      {#if menuState === 'root'}
-        {#each rootItems as item, i}
-          <button
-            on:click={() => {
-              menuState = item.state as MenuState;
-              focusedIndex = 0;
-            }}
-            class="menu-btn"
-            class:selected={i === focusedIndex}
-          >
-            {item.label}
-            <ChevronRight class="w-4 h-4 ml-auto" />
-          </button>
-        {/each}
-      {:else if menuState === 'cv'}
-        {#each cvItems as item, i}
-          <a
-            href={`#${item.id}`}
-            on:click={() => (show = false)}
-            class="menu-btn"
-            class:selected={i === focusedIndex}
-          >
-            {item.label}
-          </a>
-        {/each}
-      {:else if menuState === 'portfolio'}
-        {#each portfolioItems as item, i}
-          <a
-            href={item.href}
-            on:click={() => (show = false)}
-            id={`menu-item-${menuState}-${i}`}
-            role="menuitem"
-            class="menu-btn"
-            class:selected={i === focusedIndex}
-          >
-            {item.label}
-          </a>
-        {/each}
-      {:else if menuState === 'language'}
-        {#each languageItems as item, i}
-          <button
-            on:click={() => {
-              // You can set lang preference here
-              console.log('Set language:', item.lang);
-              show = false;
-            }}
-            class="menu-btn"
-            class:selected={i === focusedIndex}
-          >
-            {item.label}
-          </button>
-        {/each}
-      {/if}
+        <!-- Render current menu level -->
+        {#if menuState === 'root'}
+          {#each rootItems as item, i}
+            <button
+              on:click={() => {
+                menuState = item.state as MenuState;
+                focusedIndex = i;
+              }}
+              on:keydown={(e) => {
+                if (e.key === 'Enter') {
+                  menuState = item.state as MenuState;
+                  focusedIndex = i;
+                }
+              }}
+              on:focus={() => (focusedIndex = i)}
+              class="menu-btn"
+            >
+              {item.label}
+              <ChevronRight class="w-4 h-4 ml-auto" />
+            </button>
+          {/each}
+        {:else if menuState === 'cv'}
+          {#each cvItems as item, i}
+            <a
+              href={`#${item.id}`}
+              on:click={() => (show = false)}
+              on:focus={() => (focusedIndex = i)}
+              class="menu-btn"
+            >
+              {item.label}
+            </a>
+          {/each}
+        {:else if menuState === 'portfolio'}
+          {#each portfolioItems as item, i}
+            <a
+              href={item.href}
+              on:click={() => (show = false)}
+              id={`menu-item-${menuState}-${i}`}
+              role="menuitem"
+              class="menu-btn"
+            >
+              {item.label}
+            </a>
+          {/each}
+        {:else if menuState === 'language'}
+          {#each languageItems as item, i}
+            <button
+              on:click={() => {
+                console.log('Set language:', item.lang);
+                show = false;
+              }}
+              class="menu-btn"
+            >
+              {item.label}
+            </button>
+          {/each}
+        {/if}
+      {/key}
     </nav>
   {/if}
 </div>
@@ -190,6 +202,13 @@
   }
 
   .menu-btn.selected {
+    @apply bg-accent text-bg;
+  }
+
+  .menu-btn:hover {
+    @apply bg-accent text-bg;
+  }
+  .menu-btn:active {
     @apply bg-accent text-bg;
   }
 </style>
