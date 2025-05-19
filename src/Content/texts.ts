@@ -22,7 +22,7 @@ profilePicture: 'https://avatars.githubusercontent.com/u/1025461?v=4',
 },
 profileText: 
 `Graphic designer turned developer with a strong interest in UI/UX. Skilled in building responsive web applications using React, TypeScript and .NET. Known for a calm and collaborative work style, a hunger for learning, and a love for solving problems. My goal is to leverage my skills to create innovative solutions that make a positive impact on people's lives.
-\nFor the purpose of showing some of my code I have a special profile on GitHub where I will show a selection of personal projects. Click below to go to there.`,
+\nIf you are interested to view the code behind this page I have a created a dedicated profile on GitHub where I will host a collection of projects, starting with thi one. Click below to go to there.`,
 activeSkills: [
     {
         area: 'Frontend',
