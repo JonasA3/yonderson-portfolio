@@ -1,5 +1,6 @@
 ---
 const { id, title, border = true, scroll = false, last = false } = Astro.props;
+
 ---
 
 <section
@@ -15,7 +16,7 @@ const { id, title, border = true, scroll = false, last = false } = Astro.props;
       >
         <div class="scroll-fade-wrapper hidden md:block relative max-h-[60vh] w-full">
           <div class="fade-top absolute top-0 left-0 w-full h-10 pointer-events-none z-10" />
-          <div class="fade-bottom absolute bottom-0 left-0 w-full h-10 pointer-events-none z-10" />
+          <div class="fade-bottom absolute bottom-0 left-0 w-full h-[18rem] pointer-events-none z-10" />
 
           <div class="scroll-fade-target overflow-y-auto pr-2 max-h-[60vh]">
             <slot />
