@@ -1,0 +1,17 @@
+---
+import { ChevronsDown } from 'lucide-static';
+import Icon from './Icon.astro';
+---
+
+<div
+  class="absolute bottom-[20rem] md:bottom-0 left-0 right-0 flex flex-col items-center justify-center gap-2"
+>
+  <p class="mb-1 text-md">SCROLL TO READ CV</p>
+  <Icon
+    svg={ChevronsDown}
+    size="lg"
+    color="inherit"
+    class="text-fg motion-safe:animate-bounce"
+    aria-label="Scroll down"
+  />
+</div>
