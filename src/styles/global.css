@@ -61,6 +61,12 @@ body {
   transition: opacity 0.2s ease-out;
 }
 
+@media (max-width: 767px) {
+  h2 {
+    scroll-margin-top: 4rem;
+  }
+}
+
 @layer base {
   html {
     font-size: 16px; /* Base size for rems (1rem = 16px) */

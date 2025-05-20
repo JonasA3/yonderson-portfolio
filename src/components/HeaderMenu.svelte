@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Menu, ChevronRight, ChevronLeft } from 'lucide-svelte';
-  import { preventDefault } from 'svelte/legacy';
+  import { onMount } from 'svelte';
 
   type MenuState = 'root' | 'cv' | 'portfolio' | 'language';
 
@@ -91,6 +91,15 @@
       },
     };
   }
+
+  let isMobile = false;
+  // Check if the screen is mobile size
+  onMount(() => {
+    const media = window.matchMedia('(max-width: 767px)');
+    const update = () => (isMobile = media.matches);
+    update();
+    media.addEventListener('change', update);
+  });
 </script>
 
 <!-- The TS error is a Svelte/TS syntax bug and cannot be commented away -->
@@ -150,7 +159,7 @@
         {:else if menuState === 'cv'}
           {#each cvItems as item, i}
             <a
-              href={`#${item.id}`}
+              href={isMobile ? `#${item.id}-mobile` : `#${item.id}`}
               on:click={() => (show = false)}
               on:focus={() => (focusedIndex = i)}
               class="menu-btn"
