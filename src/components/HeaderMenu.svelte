@@ -103,20 +103,15 @@
 </script>
 
 <!-- The TS error is a Svelte/TS syntax bug and cannot be commented away -->
-<div class="dropdown" role="menu" tabindex="0" use:clickOutside>
+<div class="dropdown" role="menu" use:clickOutside>
   <button
     aria-haspopup="true"
     aria-expanded={show}
     class="px-1 py-1 text-md"
     on:click={() => {
-      console.log('Button clicked');
       show = !show;
       focusedIndex = 0;
       menuState = 'root';
-    }}
-    on:focus={() => {
-      show = true;
-      focusedIndex = 0;
     }}
   >
     <span class="flex items-center gap-2">
