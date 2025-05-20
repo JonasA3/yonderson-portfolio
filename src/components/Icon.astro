@@ -31,8 +31,5 @@ const colorMap = {
 <div
   class={`inline-flex items-center justify-center ${sizeMap[size]} ${colorMap[color]} ${className}`}
 >
-  <div
-    class="w-full h-full [&>svg]:w-full [&>svg]:h-full [&>svg]:!w-full [&>svg]:!h-full"
-    set:html={svg}
-  />
+  <div class="w-full h-full [&>svg]:!w-full [&>svg]:!h-full" set:html={svg} />
 </div>
