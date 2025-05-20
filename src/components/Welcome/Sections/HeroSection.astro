@@ -1,7 +1,6 @@
 ---
 import CvSection from '../SectionWrapper.astro';
-import { ChevronsDown } from 'lucide-static';
-import Icon from '../../Icon.astro';
+import ScrollIndicator from '../../ScrollIndicator.astro';
 ---
 
 <CvSection id="hero" title="" border={false} scroll={false}>
@@ -12,17 +11,6 @@ import Icon from '../../Icon.astro';
     <p class="font-body text-xl">
       Frontend developer <strong>focused</strong> on modern web design.
     </p>
-    <div
-      class="absolute bottom-[20rem] md:bottom-0 left-0 right-0 flex flex-col items-center justify-center gap-2"
-    >
-      <p class="mb-1 text-md">SCROLL TO READ CV</p>
-      <Icon
-        svg={ChevronsDown}
-        size="lg"
-        color="inherit"
-        class="text-fg motion-safe:animate-bounce"
-        aria-label="Scroll down"
-      />
-    </div>
+    <ScrollIndicator />
   </div>
 </CvSection>
