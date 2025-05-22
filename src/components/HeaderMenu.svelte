@@ -1,40 +1,42 @@
 <script lang="ts">
   import { Menu, ChevronRight, ChevronLeft } from 'lucide-svelte';
   import { onMount } from 'svelte';
+  import { t } from '../Content/translations';
+
+  let lang: 'en' | 'sv' = (localStorage.getItem('lang') as 'en' | 'sv') || 'en';
 
   type MenuState = 'root' | 'cv' | 'portfolio' | 'language';
 
   let show = false;
   let menuState: MenuState = 'root';
   let focusedIndex = 0;
-  let lang: 'en' | 'sv' = 'en';
   let isMobile = false;
 
-  const rootItems = [
-    { label: 'CV Quick Links', state: 'cv' },
-    { label: 'Portfolio', state: 'portfolio' },
-    { label: 'Language', state: 'language' },
+  $: rootItems = [
+    { label: t[lang]?.labels?.quickLinks, state: 'cv' },
+    { label: t[lang]?.labels?.portfolio, state: 'portfolio' },
+    { label: t[lang]?.labels?.language, state: 'language' },
   ];
 
-  const cvItems = [
-    { id: 'hero', label: 'Start' },
-    { id: 'profile', label: 'Profile' },
-    { id: 'active-skills', label: 'Active Skills' },
-    { id: 'experience-with', label: 'Experience with' },
-    { id: 'work-experience', label: 'Work Experience' },
-    { id: 'education', label: 'Education' },
-    { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Connect' },
+  $: cvItems = [
+    { id: 'hero', label: t[lang]?.sectionTitles?.start },
+    { id: 'profile', label: t[lang]?.sectionTitles?.profile },
+    { id: 'active-skills', label: t[lang]?.sectionTitles?.activeSkills },
+    { id: 'experience-with', label: t[lang]?.sectionTitles?.dormantSkills },
+    { id: 'work-experience', label: t[lang]?.sectionTitles?.experience },
+    { id: 'education', label: t[lang]?.sectionTitles?.education },
+    { id: 'about', label: t[lang]?.sectionTitles?.about },
+    { id: 'contact', label: t[lang]?.sectionTitles?.contact },
   ];
 
-  const portfolioItems = [
-    { href: '/portfolio', label: 'See All' },
+  $: portfolioItems = [
+    { href: '/portfolio', label: t[lang].labels.comingSoon },
     // Add individual projects here when available
   ];
 
-  const languageItems = [
-    { lang: 'en', label: 'English', flag: '🇬🇧' },
-    { lang: 'sv', label: 'Swedish', flag: '🇸🇪' },
+  $: languageItems = [
+    { lang: 'en', label: t[lang]?.lang?.english, flag: '🇬🇧' },
+    { lang: 'sv', label: t[lang]?.lang?.swedish, flag: '🇸🇪' },
   ];
 
   // Return to root on Escape or Back button
@@ -62,12 +64,12 @@
   //   }
   // }
 
-  function currentList() {
-    if (menuState === 'cv') return cvItems;
-    if (menuState === 'portfolio') return portfolioItems;
-    if (menuState === 'language') return languageItems;
-    return rootItems;
-  }
+  // function currentList() {
+  //   if (menuState === 'cv') return cvItems;
+  //   if (menuState === 'portfolio') return portfolioItems;
+  //   if (menuState === 'language') return languageItems;
+  //   return rootItems;
+  // }
 
   function setLang(lang: 'en' | 'sv') {
     localStorage.setItem('lang', lang);
@@ -138,7 +140,7 @@
     }}
   >
     <span class="flex items-center gap-2">
-      MENU
+      {t[lang].labels.menu.toUpperCase()}
       <Menu class="w-5 h-5" />
     </span>
   </button>
@@ -149,7 +151,8 @@
         <!-- Back button -->
         {#if menuState !== 'root'}
           <button on:click={back} class="flex items-center gap-2 text-sm mb-2">
-            <ChevronLeft class="w-4 h-4" /> Back
+            <ChevronLeft class="w-4 h-4" />
+            {t[lang].labels.back}
           </button>
         {/if}
 
@@ -182,7 +185,7 @@
               on:focus={() => (focusedIndex = i)}
               class="menu-btn"
             >
-              {item.label}
+              {item?.label}
             </a>
           {/each}
         {:else if menuState === 'portfolio'}
