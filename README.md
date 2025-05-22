@@ -1,54 +1,42 @@
 # 🌐 Yonderson – Developer Portfolio
 
-Welcome to the codebase for [Yonderson.se](https://yonderson.se) — my personal portfolio site where I showcase my frontend development skills, projects, and design-thinking approach.
+Welcome to the codebase for [Yonderson.se](https://yonderson.se) — my personal portfolio site where I showcase my frontend development skills, highlight real-world coding techniques, and share projects in a clean, accessible, and user-first experience.
 
-This site is built with a modern tech stack focused on performance, accessibility, and clean architecture.
+This site reflects my approach to modern web development — component-based architecture, strong typing, accessibility, and user preferences like dark mode and language selection.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Astro](https://astro.build/)
+- **Framework**: [Astro](https://astro.build/) (server-rendered mode)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Language**: TypeScript
-- **Components**: Svelte (selective use)
+- **Language**: TypeScript (strict mode)
+- **UI Interactivity**: [Svelte](https://svelte.dev/) (used for toggles, dropdowns, scroll indicators)
+- **Icons**: [Lucide](https://lucide.dev/) (via static or Svelte packages)
 - **Code Quality**: ESLint + Prettier
 - **Deployment**: [Netlify](https://www.netlify.com/)
-- **CI**: GitHub Actions for lint/format checks
+- **CI/CD**: GitHub Actions for lint/format checks on push
 
 ---
 
-## 📁 Project Structure
-/
-├── .astro/               → Astro's internal build cache
-├── node_modules/         → Project dependencies
-├── public/               → Static assets (e.g., favicon, images)
-├── src/                  → All site code (pages, components, layouts)
-│   ├── pages/            → Route-based pages (index.astro, etc.)
-│   ├── layouts/          → Layout components like Layout.astro
-│   └── components/       → (To be added) Reusable UI components
-├── .github/
-│   └── workflows/        → GitHub Actions CI workflows
-├── .eslintrc.cjs         → ESLint config
-├── .prettierrc           → Prettier config
-├── .prettierignore       → Prettier ignore rules
-├── .gitignore            → Git ignore rules
-├── astro.config.mjs      → Astro project config
-├── tsconfig.json         → TypeScript config
-├── package.json          → Project metadata and scripts
-├── package-lock.json     → Dependency lockfile
-└── README.md             → You're reading it 😉
+## 🌍 Multilingual Support (EN/SV)
+
+The site supports both English and Swedish via a cookie-based language preference. Language is:
+
+- Stored in `localStorage` + `document.cookie`
+- Read server-side via `Astro.cookies.get('lang')`
+- Passed into layouts and components for dynamic translation using a centralized `t[lang]` object
+
+A helper and middleware file are also included for future expansion (like automatic redirects, fallbacks, or localization headers).
 
 ---
 
 ## 🚀 Available Scripts
 
-All commands are run from the root of the project:
-
 | Command             | Action                                  |
 |---------------------|-----------------------------------------|
 | `npm install`       | Install dependencies                    |
-| `npm run dev`       | Start local dev server                  |
+| `npm run dev`       | Start local dev server (with SSR)       |
 | `npm run build`     | Build the site for production           |
 | `npm run preview`   | Preview built site locally              |
 | `npm run lint`      | Run ESLint for code quality             |
@@ -56,23 +44,26 @@ All commands are run from the root of the project:
 
 ---
 
-## ✨ Goals
+## ✨ Key Features
 
-- 🧠 Highlight technical and creative skills
-- 📱 Be fully responsive and accessible
-- 🌍 Optimize performance and SEO
-- 🤝 Encourage contact and collaboration
+- 🌗 **Light/Dark mode toggle** — respects system preferences
+- 🌍 **Multilingual interface** — cookie-based EN/SV switching
+- 🎯 **Accessible dropdown navigation** — keyboard-friendly, ARIA-labeled
+- 💬 **Interactive Svelte components** — smooth toggles, bounce hints, scroll awareness
+- 🧠 **Well-structured content layer** — translations and CV data in TypeScript
+- ⚙️ **Server-side rendering (SSR)** — required for cookie access + i18n
 
 ---
 
 ## 🚧 Work in Progress
 
-This site is under active development. Planned features include:
+Planned features and polish for future iterations:
 
-- Light/dark mode toggle
-- Project filtering & animation
-- Contact form integration
-- CMS or backend API (TBD)
+- Project filtering and animations on the portfolio page
+- Contact form with validation + API/email handling
+- CMS or headless backend integration (e.g. for blog/projects)
+- Route-based i18n support (`/en/`, `/sv/`) for SEO
+- Unit tests or accessibility snapshot tests
 
 ---
 
@@ -80,7 +71,7 @@ This site is under active development. Planned features include:
 
 - Site: [yonderson.se](https://yonderson.se)
 - GitHub: [github.com/JonasA3](https://github.com/JonasA3)
-- LinkedIn: *Add your link here if you want*
+- LinkedIn: [Jonas Andersson](https://www.linkedin.com/in/jonas-andersson-57245727/)
 
 ---
 
