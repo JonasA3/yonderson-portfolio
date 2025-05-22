@@ -65,10 +65,25 @@ export type Translations = {
     menu: string,
     language: string,
     quickLinks: string,
+    portfolio: string,
+    comingSoon: string,
+    back: string,
     theme: string,
     darkMode: string,
     lightMode: string,
     systemMode: string,
+  };
+  sectionTitles: {
+    start: string;
+    profile: string;
+    activeSkills: string;
+    dormantSkills: string;
+    experience: string;
+    education: string;
+    about: string;
+    aboutMe: string;
+    contact: string;
+    linkWith: string;
   };
   lang: {swedish: string; english: string};
 };

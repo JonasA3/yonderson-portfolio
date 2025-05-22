@@ -151,11 +151,25 @@ export const t: Record<'en' | 'sv', Translations> = {
             menu: 'Menu',
             language: 'Language',
             quickLinks: 'CV Quick Links',
+            portfolio: 'Portfolio',
+            comingSoon: 'Coming Soon',
+            back: 'Back',
             theme: 'Theme',
             darkMode: 'Dark',
             lightMode: 'Light',
             systemMode: 'System',
         },
+        sectionTitles: {
+            contact: 'Contact',
+            profile: 'Profile',
+            activeSkills: 'Active Skills',
+            dormantSkills: 'Experience with',
+            experience: 'Experience',
+            education: 'Education',
+            about: 'About',
+            aboutMe: 'About Jonas Andersson [me]',
+            start: 'Start',
+        }
     },
     sv: {
         cvContent: {
@@ -305,11 +319,25 @@ export const t: Record<'en' | 'sv', Translations> = {
             menu: 'Meny',
             language: 'Språk',
             quickLinks: 'CV Snabbval',
+            portfolio: 'Portfolio',
+            comingSoon: 'Kommer snart',
+            back: 'Tillbaka',
             theme: 'Tema',
             darkMode: 'Mörkt',
             lightMode: 'Ljust',
             systemMode: 'System',
         },
+        sectionTitles: {
+            contact: 'Kontakt',
+            profile: 'Profil',
+            activeSkills: 'Jobbar med',
+            dormantSkills: 'Har jobbat med',
+            experience: 'Erfarenhet',
+            education: 'Utbildning',
+            about: 'Om mig',
+            aboutMe: 'Om Jonas Andersson [jag]',
+            start: 'Start',
+        }
     },
 };
 
