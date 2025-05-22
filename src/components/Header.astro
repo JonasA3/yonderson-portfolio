@@ -1,6 +1,9 @@
 ---
 import ThemeToggle from './ThemeToggle.svelte';
 import HeaderMenu from './HeaderMenu.svelte';
+
+//DEV NOTE: After setting output to 'server' instead of default 'static' to be able to get cookies in astro components
+// I got a 'hydration mismatch' on my Svelte components below. Updating from client:load to client:only resolved the issue.'
 ---
 
 <header class="fixed top-0 z-50 w-full">
@@ -8,10 +11,10 @@ import HeaderMenu from './HeaderMenu.svelte';
     class="flex items-center justify-between bg-bg text-fg hover:text-bg py-1 px-5 border-b-2 border-border hover:bg-fg transition-colors duration-300"
   >
     <div>
-      <HeaderMenu client:load />
+      <HeaderMenu client:only />
     </div>
     <div class="flex items-center">
-      <ThemeToggle client:load />
+      <ThemeToggle client:only />
     </div>
   </div>
 </header>

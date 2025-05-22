@@ -71,8 +71,9 @@
 
   function setLang(lang: 'en' | 'sv') {
     localStorage.setItem('lang', lang);
-    document.cookie = `lang=${lang}; path=/; max-age=31536000`; // <-- sets server-readable cookie
+    document.cookie = `lang=${lang}; path=/; max-age=31536000;  SameSite=Lax`; // <-- sets server-readable cookie
     document.documentElement.lang = lang;
+    location.reload();
   }
 
   // Custom action to detect clicks outside
@@ -117,8 +118,9 @@
       const browserLang = navigator.language.startsWith('sv') ? 'sv' : 'en';
       lang = browserLang;
       localStorage.setItem('lang', browserLang);
-      document.cookie = `lang=${lang}; path=/; max-age=31536000`; // <-- sets server-readable cookie
+      document.cookie = `lang=${lang}; path=/; max-age=31536000; SameSite=Lax`; // <-- sets server-readable cookie
       document.documentElement.lang = lang;
+      location.reload();
     }
   });
 </script>

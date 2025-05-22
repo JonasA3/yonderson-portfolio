@@ -29,12 +29,14 @@
 
   // Watch for OS theme changes if using 'system'
   const watchSystemTheme = () => {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'system') {
-        applyTheme('system');
-      }
-    });
+    if (typeof window !== 'undefined') {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'system') {
+          applyTheme('system');
+        }
+      });
+    }
   };
 
   onMount(() => {
