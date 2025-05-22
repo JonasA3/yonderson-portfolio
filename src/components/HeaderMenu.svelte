@@ -7,6 +7,8 @@
   let show = false;
   let menuState: MenuState = 'root';
   let focusedIndex = 0;
+  let lang: 'en' | 'sv' = 'en';
+  let isMobile = false;
 
   const rootItems = [
     { label: 'CV Quick Links', state: 'cv' },
@@ -31,8 +33,8 @@
   ];
 
   const languageItems = [
-    { lang: 'en', label: 'English' },
-    { lang: 'sv', label: 'Swedish' },
+    { lang: 'en', label: 'English', flag: '🇬🇧' },
+    { lang: 'sv', label: 'Swedish', flag: '🇸🇪' },
   ];
 
   // Return to root on Escape or Back button
@@ -67,6 +69,12 @@
     return rootItems;
   }
 
+  function setLang(lang: 'en' | 'sv') {
+    localStorage.setItem('lang', lang);
+    document.cookie = `lang=${lang}; path=/; max-age=31536000`; // <-- sets server-readable cookie
+    document.documentElement.lang = lang;
+  }
+
   // Custom action to detect clicks outside
   //DEV NOTE: This is a workaround for a Svelte/TS syntax bug not DRY but works
   function clickOutside(node: HTMLElement) {
@@ -92,13 +100,26 @@
     };
   }
 
-  let isMobile = false;
   // Check if the screen is mobile size
   onMount(() => {
+    // Check if the screen is mobile size
     const media = window.matchMedia('(max-width: 767px)');
     const update = () => (isMobile = media.matches);
     update();
     media.addEventListener('change', update);
+
+    // Check and set the initial value for language
+    const saved = localStorage.getItem('lang');
+    if (saved === 'en' || saved === 'sv') {
+      lang = saved;
+      document.documentElement.lang = lang;
+    } else {
+      const browserLang = navigator.language.startsWith('sv') ? 'sv' : 'en';
+      lang = browserLang;
+      localStorage.setItem('lang', browserLang);
+      document.cookie = `lang=${lang}; path=/; max-age=31536000`; // <-- sets server-readable cookie
+      document.documentElement.lang = lang;
+    }
   });
 </script>
 
@@ -178,11 +199,12 @@
           {#each languageItems as item, i}
             <button
               on:click={() => {
-                console.log('Set language:', item.lang);
+                setLang(item.lang as 'en' | 'sv');
                 show = false;
               }}
               class="menu-btn"
             >
+              {item.flag}
               {item.label}
             </button>
           {/each}
@@ -203,10 +225,6 @@
 
   .menu-btn {
     @apply flex justify-between items-center text-left w-full text-sm text-fg hover:text-accent transition-colors px-1 py-1;
-  }
-
-  .menu-btn.selected {
-    @apply bg-accent text-bg;
   }
 
   .menu-btn:hover {
