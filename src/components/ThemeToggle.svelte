@@ -1,6 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { Sun, Moon, Monitor } from 'lucide-svelte';
+  import { t } from '../Content/translations';
+
+  let lang: 'en' | 'sv' = (localStorage.getItem('lang') as 'en' | 'sv') || 'en';
 
   // Possible modes
   type ThemeMode = 'light' | 'dark' | 'system';
@@ -81,15 +84,15 @@
     on:click={() => (show = !show)}
   >
     <div class="button-content">
-      THEME
+      {t[lang].labels.theme.toUpperCase()}:
       {#if current === 'light'}
-        LIGHT
+        {t[lang].labels.lightMode.toUpperCase()}
         <Sun class="w-5 h-5" />
       {:else if current === 'dark'}
-        DARK
+        {t[lang].labels.darkMode.toUpperCase()}
         <Moon class="w-5 h-5" />
       {:else}
-        SYSTEM
+        {t[lang].labels.systemMode.toUpperCase()}
         <Monitor class="w-5 h-5" />
       {/if}
     </div>
@@ -107,13 +110,13 @@
           aria-pressed={current === opt}
         >
           {#if opt === 'light'}
-            <Sun class="w-5 h-5" /> Light
+            <Sun class="w-5 h-5" /> {t[lang].labels.lightMode}
           {/if}
           {#if opt === 'dark'}
-            <Moon class="w-5 h-5" /> Dark
+            <Moon class="w-5 h-5" /> {t[lang].labels.darkMode}
           {/if}
           {#if opt === 'system'}
-            <Monitor class="w-5 h-5" /> System
+            <Monitor class="w-5 h-5" /> {t[lang].labels.systemMode}
           {/if}
         </button>
       {/each}

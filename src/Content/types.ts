@@ -61,6 +61,14 @@ export interface Content_CV {
 
 export type Translations = {
   cvContent: Content_CV;
-  labels: {menu: string};
+  labels: {
+    menu: string,
+    language: string,
+    quickLinks: string,
+    theme: string,
+    darkMode: string,
+    lightMode: string,
+    systemMode: string,
+  };
   lang: {swedish: string; english: string};
 };

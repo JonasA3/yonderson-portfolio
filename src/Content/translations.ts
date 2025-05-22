@@ -147,7 +147,15 @@ export const t: Record<'en' | 'sv', Translations> = {
                 studies.`
         },
         lang: {swedish: 'Swedish', english: 'English'},
-        labels: {menu: 'Menu'},
+        labels: {
+            menu: 'Menu',
+            language: 'Language',
+            quickLinks: 'CV Quick Links',
+            theme: 'Theme',
+            darkMode: 'Dark',
+            lightMode: 'Light',
+            systemMode: 'System',
+        },
     },
     sv: {
         cvContent: {
@@ -293,7 +301,15 @@ export const t: Record<'en' | 'sv', Translations> = {
               
         },
         lang: {swedish: 'Svenska', english: 'Engelska'},
-        labels: {menu: 'Meny'},
+        labels: {
+            menu: 'Meny',
+            language: 'Språk',
+            quickLinks: 'CV Snabbval',
+            theme: 'Tema',
+            darkMode: 'Mörkt',
+            lightMode: 'Ljust',
+            systemMode: 'System',
+        },
     },
 };
 
