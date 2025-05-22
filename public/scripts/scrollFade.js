@@ -20,7 +20,7 @@ export function initScrollFadeObservers() {
   });
 }
 
-// ✅ Only run on the client, and only if desktop or larger
+// Only run on the client, and only if desktop or larger
 if (typeof window !== 'undefined' && window.innerWidth >= 768) {
   initScrollFadeObservers();
 }
