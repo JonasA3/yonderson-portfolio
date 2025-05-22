@@ -11,7 +11,7 @@ This site is built with a modern tech stack focused on performance, accessibilit
 - **Framework**: [Astro](https://astro.build/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Language**: TypeScript
-- **Components**: React (selective use)
+- **Components**: Svelte (selective use)
 - **Code Quality**: ESLint + Prettier
 - **Deployment**: [Netlify](https://www.netlify.com/)
 - **CI**: GitHub Actions for lint/format checks
