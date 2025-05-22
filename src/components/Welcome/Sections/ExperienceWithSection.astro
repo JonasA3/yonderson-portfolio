@@ -1,8 +1,9 @@
 ---
-import { cvContent } from '../../../Content/translations';
+import { t } from '../../../Content/translations';
 import CvSection from '../SectionWrapper.astro';
 
-const { dormantSkills } = cvContent;
+const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
+const { dormantSkills } = t[lang].cvContent;
 ---
 
 <CvSection id="experience-with" title="Experience with" border={true} scroll={true}>

@@ -1,15 +1,21 @@
 ---
-import { cvContent } from '../../../Content/translations';
+import { t } from '../../../Content/translations';
 import CvSection from '../SectionWrapper.astro';
 import { Github } from 'lucide-static';
 import Icon from '../../Icon.astro';
+
+//DEV NOTE Output is now set to server in astro.config.mjs but an alternative if you want to set it in the component is to use below:
+//export const prerender = false;
+//This makes only this component server rendered and not the whole page.
+
+const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
 
 const {
   profileText,
   contact: {
     github: { url },
   },
-} = cvContent;
+} = t[lang].cvContent;
 ---
 
 <CvSection id="profile" title="Profile" border={true} scroll={false}>

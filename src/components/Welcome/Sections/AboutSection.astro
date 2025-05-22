@@ -1,8 +1,9 @@
 ---
-import { cvContent } from '../../../Content/translations';
+import { t } from '../../../Content/translations';
 import CvSection from '../SectionWrapper.astro';
 
-const { about } = cvContent;
+const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
+const { about } = t[lang].cvContent;
 ---
 
 <CvSection id="about" title="About Jonas Andersson (me)" border={true} scroll={false}>

@@ -1,14 +1,15 @@
 ---
-import { cvContent } from '../../../Content/translations';
+import { t } from '../../../Content/translations';
 import CvSection from '../SectionWrapper.astro';
 import { Linkedin } from 'lucide-static';
 import Icon from '../../Icon.astro';
 
+const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
 const {
   contact: {
     linkedIn: { url: linkedIn, note },
   },
-} = cvContent;
+} = t[lang].cvContent;
 ---
 
 <CvSection id="contact" title="Connect with me" border={true} scroll={false} last={true}>
