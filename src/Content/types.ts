@@ -9,7 +9,7 @@ export type Experience = {
     startDate: string;
     endDate: string;
     workDone: string[];
-  };
+};
   
   export type Education = {
     institution: string;
@@ -57,4 +57,10 @@ export interface Content_CV {
     experience: Experience[];
     education: Education[];
     about: string;
-}
+};
+
+export type Translations = {
+  cvContent: Content_CV;
+  labels: {menu: string};
+  lang: {swedish: string; english: string};
+};
