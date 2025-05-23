@@ -170,13 +170,18 @@ export const t: Record<'en' | 'sv', Translations> = {
             aboutTitle: 'About',
             aboutMeTitle: 'About Jonas Andersson',
             startTitle: 'Start',
+            portfolioTitle: 'Portfolio'
         },
         descriptions: {
-            scrollToReadCV: 'Scroll to Read CV',
-            scrollToReadMore: 'Read more',
             aboutActiveSkills: 'I am currently focused on these technologies. I am actively using them in my current projects and am always looking to deepen my knowledge and skills in these areas.',
             aboutDormantSkills: 'I have experience with these technologies, but they are not my primary focus at the moment but would be happy to revisit them for a refresh.',
-            aboutSite: 'About this site'
+            aboutSite: 'About this site',
+            aboutPortfolio: 'Here I will collect my projects and experiences. The page is currently under construction and I will be adding content as I go.',
+        },
+        messages: {
+            backHome: 'Back to home',
+            scrollToReadCV: 'Scroll to read CV',
+            scrollToReadMore: 'Read more'
         }
     },
     sv: {
@@ -346,13 +351,18 @@ export const t: Record<'en' | 'sv', Translations> = {
             aboutTitle: 'Om mig',
             aboutMeTitle: 'Om Jonas Andersson',
             startTitle: 'Start',
+            portfolioTitle: 'Portfolio'
         },
         descriptions: {
-            scrollToReadCV: 'Scrolla för att läsa CV',
-            scrollToReadMore: 'Läs mer',
             aboutActiveSkills: 'Just nu är jag fokuserad på frontend och arbetar dagligen med följande tekniker och verktyg. Jag använder både kurser och praktisk tillämpning för att aktivt fördjupa mina kunskaper här.',
             aboutDormantSkills: 'Förutom mitt nuvarande fokusområde har jag även både studie- och arbetserfarenhet av följande verktyg. Detta är tekniker som jag planerar att återuppta och fräscha upp inom kort.',
-            aboutSite: 'Om denna sida'
+            aboutSite: 'Om denna sida',
+            aboutPortfolio: 'Här kommer jag att samla mina projekt och erfarenheter. Just nu är sidan under uppbyggnad och jag kommer att fylla på med innehåll allt eftersom.',
+        },
+        messages: {
+            backHome: 'Tillbaka till startsidan',
+            scrollToReadCV: 'Scrolla för att läsa CV',
+            scrollToReadMore: 'Läs mer'
         }
 
     },

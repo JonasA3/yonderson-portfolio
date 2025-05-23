@@ -12,31 +12,33 @@
   let focusedIndex = 0;
   let isMobile = false;
 
+  const l = t[lang];
+
   $: rootItems = [
-    { label: t[lang]?.labels?.quickLinks, state: 'cv' },
-    { label: t[lang]?.labels?.portfolio, state: 'portfolio' },
-    { label: t[lang]?.labels?.language, state: 'language' },
+    { label: l?.labels?.quickLinks, state: 'cv' },
+    { label: l?.labels?.portfolio, state: 'portfolio' },
+    { label: l?.labels?.language, state: 'language' },
   ];
 
   $: cvItems = [
-    { id: 'hero', label: t[lang]?.sectionTitles?.start },
-    { id: 'profile', label: t[lang]?.sectionTitles?.profile },
-    { id: 'active-skills', label: t[lang]?.sectionTitles?.activeSkills },
-    { id: 'experience-with', label: t[lang]?.sectionTitles?.dormantSkills },
-    { id: 'work-experience', label: t[lang]?.sectionTitles?.experience },
-    { id: 'education', label: t[lang]?.sectionTitles?.education },
-    { id: 'about', label: t[lang]?.sectionTitles?.aboutTitle },
-    { id: 'contact', label: t[lang]?.sectionTitles?.contact },
+    { id: 'hero', label: l?.sectionTitles?.startTitle },
+    { id: 'profile', label: l?.sectionTitles?.profileTitle },
+    { id: 'active-skills', label: l.sectionTitles?.activeSkillsTitle },
+    { id: 'experience-with', label: l?.sectionTitles?.dormantSkillsTitle },
+    { id: 'work-experience', label: l?.sectionTitles?.experienceTitle },
+    { id: 'education', label: l?.sectionTitles?.educationTitle },
+    { id: 'about', label: l?.sectionTitles?.aboutTitle },
+    { id: 'contact', label: l?.sectionTitles?.contactTitle },
   ];
 
   $: portfolioItems = [
-    { href: '/portfolio', label: t[lang].labels.comingSoon },
+    { href: '/portfolio', label: l.sectionTitles?.portfolioTitle },
     // Add individual projects here when available
   ];
 
   $: languageItems = [
-    { lang: 'en', label: t[lang]?.lang?.english, flag: '🇬🇧' },
-    { lang: 'sv', label: t[lang]?.lang?.swedish, flag: '🇸🇪' },
+    { lang: 'en', label: l?.lang?.english, flag: '🇬🇧' },
+    { lang: 'sv', label: l?.lang?.swedish, flag: '🇸🇪' },
   ];
 
   // Return to root on Escape or Back button
@@ -140,7 +142,7 @@
     }}
   >
     <span class="flex items-center gap-2">
-      {t[lang].labels.menu.toUpperCase()}
+      {l.labels.menu.toUpperCase()}
       <Menu class="w-5 h-5" />
     </span>
   </button>
@@ -152,7 +154,7 @@
         {#if menuState !== 'root'}
           <button on:click={back} class="flex items-center gap-2 text-sm mb-2">
             <ChevronLeft class="w-4 h-4" />
-            {t[lang].labels.back}
+            {l.labels.back}
           </button>
         {/if}
 

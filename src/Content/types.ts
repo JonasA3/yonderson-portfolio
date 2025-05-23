@@ -84,13 +84,18 @@ export type Translations = {
     aboutMeTitle: string;
     contactTitle: string;
     linkWithTitle: string;
+    portfolioTitle: string;
   };
   descriptions: {
-    scrollToReadCV: string;
-    scrollToReadMore: string;
     aboutActiveSkills: string;
     aboutDormantSkills: string;
     aboutSite: string;
+    aboutPortfolio: string;
+  };
+  messages: {
+    backHome: string;
+    scrollToReadCV: string;
+    scrollToReadMore: string;
   }
   lang: {swedish: string; english: string};
 };

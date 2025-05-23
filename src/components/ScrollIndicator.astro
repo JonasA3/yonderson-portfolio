@@ -4,7 +4,7 @@ import Icon from './Icon.astro';
 import { t } from '../Content/translations';
 
 const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
-const { scrollToReadCV } = t[lang].descriptions;
+const { scrollToReadCV } = t[lang].messages;
 ---
 
 <div
