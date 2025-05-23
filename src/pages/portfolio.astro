@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t } from '../Content/translations';
+
+const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
+const { backHome } = t[lang].messages;
+const { portfolioTitle } = t[lang].sectionTitles;
+const { aboutPortfolio } = t[lang].descriptions;
+---
+
+<Layout>
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+    <h1 class="text-4xl md:text-5xl font-logo mb-4">{portfolioTitle}</h1>
+    <p class="text-lg md:text-xl text-fg/80 mb-8 max-w-xl">{aboutPortfolio}</p>
+    <a
+      href="/"
+      class="px-6 py-2 bg-accent text-bg rounded-xl text-sm hover:bg-opacity-90 transition"
+    >
+      ← {backHome}
+    </a>
+  </section>
+</Layout>
