@@ -16,13 +16,13 @@
  * Keeping this file commented but active is intentional for future-proofing and experimentation.
  */
 
-import { defineMiddleware } from 'astro/middleware';
-import { getLangFromRequest } from './utils/getLang';
+// import { defineMiddleware } from 'astro/middleware';
+// import { getLangFromRequest } from './utils/getLang';
 
-export const onRequest = defineMiddleware((context, next) => {
-  const lang = getLangFromRequest(context);
-  // eslint-disable-next-line no-undef
-  // console.log('[middleware] lang =', lang);
+// export const onRequest = defineMiddleware((context, next) => {
+//   const lang = getLangFromRequest(context);
+//   // eslint-disable-next-line no-undef
+//   console.log('[middleware] lang =', lang);
 
-  return next();
-});
+//   return next();
+// });
