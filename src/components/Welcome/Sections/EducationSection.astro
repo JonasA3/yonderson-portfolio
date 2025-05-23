@@ -4,9 +4,10 @@ import CvSection from '../SectionWrapper.astro';
 
 const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
 const { education } = t[lang].cvContent;
+const { educationTitle } = t[lang].sectionTitles;
 ---
 
-<CvSection id="education" title="Education" border={true} scroll={true}>
+<CvSection id="education" title={educationTitle} border={true} scroll={true}>
   <ul class="space-y-6 font-body text-lg text-left max-w-[500px] mx-auto">
     {
       education.map((school) => (

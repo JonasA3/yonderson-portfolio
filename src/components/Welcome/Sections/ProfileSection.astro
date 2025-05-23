@@ -16,9 +16,11 @@ const {
     github: { url },
   },
 } = t[lang].cvContent;
+
+const { profileTitle } = t[lang].sectionTitles;
 ---
 
-<CvSection id="profile" title="Profile" border={true} scroll={false}>
+<CvSection id="profile" title={profileTitle} border={true} scroll={false}>
   <p class="font-body text-lg text-justify whitespace-pre-line">{profileText}</p>
   <a
     href={url}

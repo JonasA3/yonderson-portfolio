@@ -160,15 +160,23 @@ export const t: Record<'en' | 'sv', Translations> = {
             systemMode: 'System',
         },
         sectionTitles: {
-            contact: 'Contact',
-            profile: 'Profile',
-            activeSkills: 'Active Skills',
-            dormantSkills: 'Experience with',
-            experience: 'Experience',
-            education: 'Education',
-            about: 'About',
-            aboutMe: 'About Jonas Andersson [me]',
-            start: 'Start',
+            contactTitle: 'Contact',
+            linkWithTitle: 'Connect with me',
+            profileTitle: 'Profile',
+            activeSkillsTitle: 'Active Skills',
+            dormantSkillsTitle: 'Experience with',
+            experienceTitle: 'Experience',
+            educationTitle: 'Education',
+            aboutTitle: 'About',
+            aboutMeTitle: 'About Jonas Andersson',
+            startTitle: 'Start',
+        },
+        descriptions: {
+            scrollToReadCV: 'Scroll to Read CV',
+            scrollToReadMore: 'Read more',
+            aboutActiveSkills: 'I am currently focused on these technologies. I am actively using them in my current projects and am always looking to deepen my knowledge and skills in these areas.',
+            aboutDormantSkills: 'I have experience with these technologies, but they are not my primary focus at the moment but would be happy to revisit them for a refresh.',
+            aboutSite: 'About this site'
         }
     },
     sv: {
@@ -328,16 +336,25 @@ export const t: Record<'en' | 'sv', Translations> = {
             systemMode: 'System',
         },
         sectionTitles: {
-            contact: 'Kontakt',
-            profile: 'Profil',
-            activeSkills: 'Jobbar med',
-            dormantSkills: 'Har jobbat med',
-            experience: 'Erfarenhet',
-            education: 'Utbildning',
-            about: 'Om mig',
-            aboutMe: 'Om Jonas Andersson [jag]',
-            start: 'Start',
+            contactTitle: 'Kontakt',
+            linkWithTitle: 'Kontakta mig',
+            profileTitle: 'Profil',
+            activeSkillsTitle: 'Jobbar med',
+            dormantSkillsTitle: 'Har jobbat med',
+            experienceTitle: 'Erfarenhet',
+            educationTitle: 'Utbildning',
+            aboutTitle: 'Om mig',
+            aboutMeTitle: 'Om Jonas Andersson',
+            startTitle: 'Start',
+        },
+        descriptions: {
+            scrollToReadCV: 'Scrolla för att läsa CV',
+            scrollToReadMore: 'Läs mer',
+            aboutActiveSkills: 'Just nu är jag fokuserad på frontend och arbetar dagligen med följande tekniker och verktyg. Jag använder både kurser och praktisk tillämpning för att aktivt fördjupa mina kunskaper här.',
+            aboutDormantSkills: 'Förutom mitt nuvarande fokusområde har jag även både studie- och arbetserfarenhet av följande verktyg. Detta är tekniker som jag planerar att återuppta och fräscha upp inom kort.',
+            aboutSite: 'Om denna sida'
         }
+
     },
 };
 

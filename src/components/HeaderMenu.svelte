@@ -25,7 +25,7 @@
     { id: 'experience-with', label: t[lang]?.sectionTitles?.dormantSkills },
     { id: 'work-experience', label: t[lang]?.sectionTitles?.experience },
     { id: 'education', label: t[lang]?.sectionTitles?.education },
-    { id: 'about', label: t[lang]?.sectionTitles?.about },
+    { id: 'about', label: t[lang]?.sectionTitles?.aboutTitle },
     { id: 'contact', label: t[lang]?.sectionTitles?.contact },
   ];
 

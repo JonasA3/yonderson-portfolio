@@ -10,9 +10,10 @@ const {
     linkedIn: { url: linkedIn, note },
   },
 } = t[lang].cvContent;
+const { contactTitle } = t[lang].sectionTitles;
 ---
 
-<CvSection id="contact" title="Connect with me" border={true} scroll={false} last={true}>
+<CvSection id="contact" title={contactTitle} border={true} scroll={false} last={true}>
   <p class="font-body text-lg text-justify whitespace-pre-line">{note}</p>
   <a
     href={linkedIn}

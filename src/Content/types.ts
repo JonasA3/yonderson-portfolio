@@ -74,16 +74,23 @@ export type Translations = {
     systemMode: string,
   };
   sectionTitles: {
-    start: string;
-    profile: string;
-    activeSkills: string;
-    dormantSkills: string;
-    experience: string;
-    education: string;
-    about: string;
-    aboutMe: string;
-    contact: string;
-    linkWith: string;
+    startTitle: string;
+    profileTitle: string;
+    activeSkillsTitle: string;
+    dormantSkillsTitle: string;
+    experienceTitle: string;
+    educationTitle: string;
+    aboutTitle: string;
+    aboutMeTitle: string;
+    contactTitle: string;
+    linkWithTitle: string;
   };
+  descriptions: {
+    scrollToReadCV: string;
+    scrollToReadMore: string;
+    aboutActiveSkills: string;
+    aboutDormantSkills: string;
+    aboutSite: string;
+  }
   lang: {swedish: string; english: string};
 };

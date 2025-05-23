@@ -1,12 +1,16 @@
 ---
 import { ChevronsDown } from 'lucide-static';
 import Icon from './Icon.astro';
+import { t } from '../Content/translations';
+
+const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
+const { scrollToReadCV } = t[lang].descriptions;
 ---
 
 <div
   class="absolute bottom-[20rem] md:bottom-0 left-0 right-0 flex flex-col items-center justify-center gap-2"
 >
-  <p class="mb-1 text-md">SCROLL TO READ CV</p>
+  <p class="mb-1 text-md">{scrollToReadCV.toLocaleUpperCase()}</p>
   <Icon
     svg={ChevronsDown}
     size="lg"

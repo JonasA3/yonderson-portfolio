@@ -4,12 +4,13 @@ import CvSection from '../SectionWrapper.astro';
 
 const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
 const { activeSkills } = t[lang].cvContent;
+const { activeSkillsTitle } = t[lang].sectionTitles;
+const { aboutActiveSkills } = t[lang].descriptions;
 ---
 
-<CvSection id="active-skills" title="Active Skills" border={true} scroll={true}>
+<CvSection id="active-skills" title={activeSkillsTitle} border={true} scroll={true}>
   <p class="font-body text-lg text-justify">
-    I am currently focused on these technologies. I am actively using them in my current projects
-    and am always looking to deepen my knowledge and skills in these areas.
+    {aboutActiveSkills}
   </p>
   <ul class="font-body text-lg text-left space-y-6">
     {
