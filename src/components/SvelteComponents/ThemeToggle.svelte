@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { Sun, Moon, Monitor } from 'lucide-svelte';
-  import { t } from '../Content/translations';
+  import { t } from '../../Content/translations';
 
   let lang: 'en' | 'sv' = (localStorage.getItem('lang') as 'en' | 'sv') || 'en';
 

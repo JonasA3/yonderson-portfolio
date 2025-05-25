@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Menu, ChevronRight, ChevronLeft } from 'lucide-svelte';
   import { onMount } from 'svelte';
-  import { t } from '../Content/translations';
+  import { t } from '../../Content/translations';
 
   let lang: 'en' | 'sv' = (localStorage.getItem('lang') as 'en' | 'sv') || 'en';
 
@@ -37,8 +37,8 @@
   ];
 
   $: languageItems = [
-    { lang: 'en', label: l?.lang?.english, flag: '🇬🇧' },
-    { lang: 'sv', label: l?.lang?.swedish, flag: '🇸🇪' },
+    { lang: 'en', label: l?.lang?.english, flag: '🇬🇧', ariaLabel: l?.lang?.englishFlag },
+    { lang: 'sv', label: l?.lang?.swedish, flag: '🇸🇪', ariaLabel: l?.lang?.swedishFlag },
   ];
 
   // Return to root on Escape or Back button
@@ -210,6 +210,7 @@
                 show = false;
               }}
               class="menu-btn"
+              aria-label={item.ariaLabel}
             >
               {item.flag}
               {item.label}
