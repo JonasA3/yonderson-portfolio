@@ -4,13 +4,14 @@ export interface IconProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
   color?: 'current' | 'white' | 'black' | 'fg' | 'accent';
   class?: string;
+  ariaLabel?: string;
 }
 
 // First, cast Astro.props to IconProps
 const props = Astro.props as IconProps;
 
 // Then destructure
-const { svg, size = 'md', color = 'current', class: className = '' } = props;
+const { svg, size = 'md', color = 'current', class: className = '', ariaLabel = '' } = props;
 
 const sizeMap = {
   sm: 'w-4 h-4',
@@ -31,5 +32,9 @@ const colorMap = {
 <div
   class={`inline-flex items-center justify-center ${sizeMap[size]} ${colorMap[color]} ${className}`}
 >
-  <div class="w-full h-full [&>svg]:!w-full [&>svg]:!h-full" set:html={svg} />
+  <div
+    class=`w-full h-full [&>svg]:!w-full [&>svg]:!h-full aria`
+    aria-label={ariaLabel}
+    set:html={svg}
+  />
 </div>
