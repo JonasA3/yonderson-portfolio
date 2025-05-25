@@ -97,5 +97,10 @@ export type Translations = {
     scrollToReadCV: string;
     scrollToReadMore: string;
   }
-  lang: {swedish: string; english: string};
+  lang: {
+    swedish: string; 
+    english: string;
+    swedishFlag: string;
+    englishFlag: string;
+  };
 };

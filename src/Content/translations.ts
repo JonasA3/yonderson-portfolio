@@ -146,7 +146,12 @@ export const t: Record<'en' | 'sv', Translations> = {
                 But I also like my quiet time with a good book, movie or
                 studies.`
         },
-        lang: {swedish: 'Swedish', english: 'English'},
+        lang: {
+          swedish: 'Swedish', 
+          english: 'English',
+          swedishFlag: 'Swedish flag',
+          englishFlag: 'English flag'
+        },
         labels: {
             menu: 'Menu',
             language: 'Language',
@@ -327,7 +332,12 @@ export const t: Record<'en' | 'sv', Translations> = {
               Men jag uppskattar också lugna stunder med en bra bok, film eller studier.`
               
         },
-        lang: {swedish: 'Svenska', english: 'Engelska'},
+        lang: {
+          swedish: 'Svenska', 
+          english: 'Engelska',
+          swedishFlag: 'Svensk flagga',
+          englishFlag: 'Engelsk flagga'
+        },
         labels: {
             menu: 'Meny',
             language: 'Språk',
