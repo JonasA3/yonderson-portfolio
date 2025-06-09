@@ -34,7 +34,19 @@ import Footer from '../components/Footer.astro';
     <meta name="twitter:image" content="/social-preview.jpg" />
 
     <!-- Icons + Theme -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicons/favicon-light.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicons/favicon-dark.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+
     <meta name="theme-color" content="#0f172a" />
 
     <meta name="generator" content={Astro.generator} />
