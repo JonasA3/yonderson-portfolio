@@ -14,9 +14,11 @@
     "@astrojs/netlify": "^6.3.4",
     "@astrojs/svelte": "^7.0.13",
     "astro": "^5.7.4",
+    "clsx": "^2.1.1",
     "lucide-static": "^0.510.0",
     "lucide-svelte": "^0.510.0",
     "svelte": "^5.28.2",
+    "tailwind-merge": "^3.3.1",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
