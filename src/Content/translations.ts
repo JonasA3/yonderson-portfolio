@@ -90,8 +90,8 @@ export const t: Record<'en' | 'sv', Translations> = {
                         company: 'Toxic Interactive',
                         position: 'Frontend Developer',
                         location: 'Borås',
-                        startDate: '2021',
-                        endDate: '2022',
+                        startDate: '2022',
+                        endDate: '2023',
                         workDone: [
                             'Developed web applications using React and Redux Toolkit.',
                             'Implemented responsive design principles to ensure optimal user experience across devices.',
@@ -278,8 +278,8 @@ export const t: Record<'en' | 'sv', Translations> = {
                     company: 'Toxic Interactive',
                     position: 'Frontendutvecklare',
                     location: 'Borås',
-                    startDate: '2021',
-                    endDate: '2022',
+                    startDate: '2022',
+                    endDate: '2023',
                     workDone: [
                       'Utvecklade webbapplikationer med React och Redux Toolkit.',
                       'Implementerade responsiv design för optimal upplevelse på olika enheter.',
