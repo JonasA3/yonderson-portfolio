@@ -129,7 +129,6 @@
   });
 </script>
 
-<!-- The TS error is a Svelte/TS syntax bug and cannot be commented away -->
 <div class="dropdown" role="menu" use:clickOutside>
   <button
     aria-haspopup="true"
@@ -182,7 +181,7 @@
         {:else if menuState === 'cv'}
           {#each cvItems as item, i}
             <a
-              href={isMobile ? `#${item.id}-mobile` : `#${item.id}`}
+              href={item.id === 'hero' ? '/' : isMobile ? `#${item.id}-mobile` : `#${item.id}`}
               on:click={() => (show = false)}
               on:focus={() => (focusedIndex = i)}
               class="menu-btn"
