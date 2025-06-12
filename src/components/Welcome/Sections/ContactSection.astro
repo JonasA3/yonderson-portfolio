@@ -3,6 +3,8 @@ import { t } from '../../../Content/translations';
 import CvSection from '../SectionWrapper.astro';
 import { Linkedin } from 'lucide-static';
 import Icon from '../../Icon.astro';
+import { classes } from '../../../styles/tailwindClassNames';
+import { cn } from '../../../utils/cn';
 
 const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
 const {
@@ -14,7 +16,7 @@ const { contactTitle } = t[lang].sectionTitles;
 ---
 
 <CvSection id="contact" title={contactTitle} border={true} scroll={false} last={true}>
-  <p class="font-body text-lg text-justify whitespace-pre-line">{note}</p>
+  <p class={cn(classes.text.paragraph, 'text-center hyphens-none')}>{note}</p>
   <a
     href={linkedIn}
     class="flex items-center justify-center mt-4 text-lg font-semibold text-fg hover:text-accent"

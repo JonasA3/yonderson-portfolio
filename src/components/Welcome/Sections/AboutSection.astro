@@ -1,6 +1,8 @@
 ---
 import { t } from '../../../Content/translations';
 import CvSection from '../SectionWrapper.astro';
+import { classes } from '../../../styles/tailwindClassNames';
+import { cn } from '../../../utils/cn';
 
 const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
 const { about } = t[lang].cvContent;
@@ -14,7 +16,7 @@ const { aboutMeTitle } = t[lang].sectionTitles;
       alt="Portrait of Jonas Andersson"
       class="md:rounded-xl rounded-full w-32 h-32 md:w-40 md:h-40 object-cover object-top border-gray-400 border-2"
     />
-    <p class="font-body text-lg text-justify">
+    <p class={cn(classes.text.paragraph)}>
       {about}
     </p>
   </div>

@@ -1,6 +1,8 @@
 ---
 import { t } from '../../../Content/translations';
 import CvSection from '../SectionWrapper.astro';
+import { classes } from '../../../styles/tailwindClassNames';
+import { cn } from '../../../utils/cn';
 
 const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
 const { activeSkills } = t[lang].cvContent;
@@ -9,7 +11,7 @@ const { aboutActiveSkills } = t[lang].descriptions;
 ---
 
 <CvSection id="active-skills" title={activeSkillsTitle} border={true} scroll={true}>
-  <p class="font-body text-lg text-justify">
+  <p class={cn(classes.text.paragraph)}>
     {aboutActiveSkills}
   </p>
   <ul class="font-body text-lg text-left space-y-6">

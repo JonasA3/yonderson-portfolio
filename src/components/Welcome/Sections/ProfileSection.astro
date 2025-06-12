@@ -3,7 +3,8 @@ import { t } from '../../../Content/translations';
 import CvSection from '../SectionWrapper.astro';
 import { Github } from 'lucide-static';
 import Icon from '../../Icon.astro';
-
+import { classes } from '../../../styles/tailwindClassNames';
+import { cn } from '../../../utils/cn';
 //DEV NOTE Output is now set to server in astro.config.mjs but an alternative if you want to set it in the component is to use below:
 //export const prerender = false;
 //This makes only this component server rendered and not the whole page.
@@ -21,7 +22,7 @@ const { profileTitle } = t[lang].sectionTitles;
 ---
 
 <CvSection id="profile" title={profileTitle} border={true} scroll={false}>
-  <p class="font-body text-lg text-justify whitespace-pre-line">{profileText}</p>
+  <p class={cn(classes.text.paragraph, 'whitespace-pre-line')}>{profileText}</p>
   <a
     href={url}
     class="flex items-center justify-center mt-4 text-lg font-semibold text-fg hover:text-accent"
