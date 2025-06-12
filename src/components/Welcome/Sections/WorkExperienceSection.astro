@@ -19,7 +19,6 @@ const { experienceTitle } = t[lang].sectionTitles;
             <br class="block sm:hidden" />
             <span class="sm:ml-2 font-semibold">Duration:</span> {job.startDate} – {job.endDate}
           </p>
-
           <ul class="list-disc pl-6 mt-2 space-y-1">
             {job.workDone.map((task) => (
               <li>{task}</li>

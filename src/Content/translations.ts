@@ -31,6 +31,10 @@ export const t: Record<'en' | 'sv', Translations> = {
                         skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'REST API', 'SOAP API', 'GraphQL']
                     },
                     {
+                      area: 'Testing',
+                      skills: ['Jest unit tests']
+                    },
+                    {
                         area: 'Backend',
                         skills: ['Node.js', 'github actions']
                     },
@@ -218,6 +222,10 @@ export const t: Record<'en' | 'sv', Translations> = {
                   {
                     area: 'Frontend',
                     skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'REST API', 'SOAP API', 'GraphQL']
+                  },
+                  {
+                    area: 'Tester',
+                    skills: ['Jest unit tests']
                   },
                   {
                     area: 'Backend',
