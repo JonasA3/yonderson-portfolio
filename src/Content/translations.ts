@@ -17,11 +17,13 @@ export const t: Record<'en' | 'sv', Translations> = {
                     note: 'More to come...'
                 },
                 website: {
-                    url: 'https://www.yonderson.se ',
+                    url: 'https://www.yonderson.se',
                     note: 'You are here!'
                 },
                 profilePicture: 'https://avatars.githubusercontent.com/u/1025461?v=4',
                 },
+                welcomeText: `This site is my digital CV and portfolio—a place where you can explore my skills, projects, and professional background. Whether you're here for a quick overview or a deeper dive, I’ve designed everything to be easy to navigate and available in both English and Swedish.
+                You can also download a version of the CV by clicking below`,
                 profileText: 
                 `Graphic designer turned developer with a strong interest in UI/UX. Skilled in building responsive web applications using React, TypeScript and .NET. Known for a calm and collaborative work style, a hunger for learning, and a love for solving problems. My goal is to leverage my skills to create innovative solutions that make a positive impact on people's lives.
                 \nIf you are interested to view the code behind this page I have a created a dedicated profile on GitHub where I will host a collection of projects, starting with thi one. Click below to go to there.`,
@@ -167,6 +169,7 @@ export const t: Record<'en' | 'sv', Translations> = {
             darkMode: 'Dark',
             lightMode: 'Light',
             systemMode: 'System',
+            download: 'Download CV'
         },
         sectionTitles: {
             contactTitle: 'Contact',
@@ -179,7 +182,8 @@ export const t: Record<'en' | 'sv', Translations> = {
             aboutTitle: 'About',
             aboutMeTitle: 'About Jonas Andersson',
             startTitle: 'Start',
-            portfolioTitle: 'Portfolio'
+            portfolioTitle: 'Portfolio',
+            welcomeTitle: 'Welcome'
         },
         descriptions: {
             aboutActiveSkills: 'I am currently focused on these technologies. I am actively using them in my current projects and am always looking to deepen my knowledge and skills in these areas.',
@@ -215,6 +219,8 @@ export const t: Record<'en' | 'sv', Translations> = {
                   },
                   profilePicture: 'https://avatars.githubusercontent.com/u/1025461?v=4'
                 },
+                welcomeText: `Den här sidan är mitt digitala CV och portfolio – en plats där du kan utforska mina kunskaper, projekt och yrkesbakgrund. Oavsett om du är här för en snabb överblick eller vill fördjupa dig, har jag designat sidan för att vara lätt att navigera och tillgänglig på både svenska och engelska.
+                Du kan också ladda hem en version av CV:n genom att klicka nedanför.`,
                 profileText: `
               Grafisk formgivare som bytte bana till utveckling med ett stort intresse för UI/UX. Jag bygger responsiva webbapplikationer med React, TypeScript och .NET. Känd för ett lugnt och pedagogiskt arbetssätt, nyfikenhet på att lära och en passion för att lösa problem. Mitt mål är att använda mina färdigheter för att skapa innovativa lösningar som gör skillnad i människors vardag.
               \nOm du är nyfiken på koden bakom denna sida har jag skapat en särskild GitHub-profil där jag samlar projekt, med start i detta. Klicka nedan för att komma dit.`,
@@ -357,6 +363,7 @@ export const t: Record<'en' | 'sv', Translations> = {
             darkMode: 'Mörkt',
             lightMode: 'Ljust',
             systemMode: 'System',
+            download: 'Ladda hem CV'
         },
         sectionTitles: {
             contactTitle: 'Kontakt',
@@ -369,7 +376,8 @@ export const t: Record<'en' | 'sv', Translations> = {
             aboutTitle: 'Om mig',
             aboutMeTitle: 'Om Jonas Andersson',
             startTitle: 'Start',
-            portfolioTitle: 'Portfolio'
+            portfolioTitle: 'Portfolio',
+            welcomeTitle: 'Välkommen'
         },
         descriptions: {
             aboutActiveSkills: 'Just nu är jag fokuserad på frontend och arbetar dagligen med följande tekniker och verktyg. Jag använder både kurser och praktisk tillämpning för att aktivt fördjupa mina kunskaper här.',

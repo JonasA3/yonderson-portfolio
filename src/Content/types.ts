@@ -43,6 +43,7 @@ export type Experience = {
 
 export interface Content_CV {
     contact: Contact;
+    welcomeText: string;
     profileText: string;
     activeSkills: {
         description?: string;
@@ -72,6 +73,7 @@ export type Translations = {
     darkMode: string,
     lightMode: string,
     systemMode: string,
+    download: string
   };
   sectionTitles: {
     startTitle: string;
@@ -85,6 +87,7 @@ export type Translations = {
     contactTitle: string;
     linkWithTitle: string;
     portfolioTitle: string;
+    welcomeTitle: string;
   };
   descriptions: {
     aboutActiveSkills: string;
