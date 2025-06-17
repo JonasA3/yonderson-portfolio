@@ -22,6 +22,7 @@
 
   $: cvItems = [
     { id: 'hero', label: l?.sectionTitles?.startTitle },
+    { id: 'welcome', label: l?.sectionTitles?.welcomeTitle },
     { id: 'profile', label: l?.sectionTitles?.profileTitle },
     { id: 'active-skills', label: l.sectionTitles?.activeSkillsTitle },
     { id: 'experience-with', label: l?.sectionTitles?.dormantSkillsTitle },
