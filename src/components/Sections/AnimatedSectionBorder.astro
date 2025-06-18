@@ -27,7 +27,7 @@
     const wrappers = document.querySelectorAll('.border-wrapper');
 
     wrappers.forEach((wrapper) => {
-      if (!window.matchMedia('(min-width: 768px)').matches) return;
+      if (!window.matchMedia('(min-width: 767px)').matches) return;
 
       const observer = new IntersectionObserver(
         ([entry]) => {
