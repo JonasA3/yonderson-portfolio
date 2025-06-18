@@ -26,7 +26,7 @@ export const t: Record<'en' | 'sv', Translations> = {
                 You can also download a version of the CV by clicking below`,
                 profileText: 
                 `Graphic designer turned developer with a strong interest in UI/UX. Skilled in building responsive web applications using React, TypeScript and .NET. Known for a calm and collaborative work style, a hunger for learning, and a love for solving problems. My goal is to leverage my skills to create innovative solutions that make a positive impact on people's lives.
-                \nIf you are interested to view the code behind this page I have a created a dedicated profile on GitHub where I will host a collection of projects, starting with thi one. Click below to go to there.`,
+                \nThis site is built with Astro, TypeScript, Tailwind, and Svelte – a modern stack focused on speed, accessibility, and component-based development. If you are interested to view the code behind this page I have a created a dedicated profile on GitHub where I will host a collection of projects, starting with thi one. Click below to go to there.`,
                 activeSkills: [
                     {
                         area: 'Frontend',
@@ -223,7 +223,7 @@ export const t: Record<'en' | 'sv', Translations> = {
                 Du kan också ladda hem en version av CV:n genom att klicka nedanför.`,
                 profileText: `
               Grafisk formgivare som bytte bana till utveckling med ett stort intresse för UI/UX. Jag bygger responsiva webbapplikationer med React, TypeScript och .NET. Känd för ett lugnt och pedagogiskt arbetssätt, nyfikenhet på att lära och en passion för att lösa problem. Mitt mål är att använda mina färdigheter för att skapa innovativa lösningar som gör skillnad i människors vardag.
-              \nOm du är nyfiken på koden bakom denna sida har jag skapat en särskild GitHub-profil där jag samlar projekt, med start i detta. Klicka nedan för att komma dit.`,
+              \nDen här webbplatsen är byggd med Astro, TypeScript, Tailwind och Svelte – en modern stack som fokuserar på snabbhet, tillgänglighet och komponentbaserad utveckling. Om du är nyfiken på koden bakom denna sida har jag skapat en särskild GitHub-profil där jag samlar projekt, med start i detta. Klicka nedan för att komma dit.`,
                 activeSkills: [
                   {
                     area: 'Frontend',
