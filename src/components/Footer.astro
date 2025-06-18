@@ -1,7 +1,29 @@
 <footer class="fixed bottom-0 w-full">
   <div
-    class="flex flex-col items-center justify-center bg-bg text-fg hover:text-bg py-2 px-2 border-t-2 border-border hover:bg-fg transition-colors duration-300"
+    class="relative flex items-center justify-between bg-bg text-fg hover:text-bg py-2 px-2 border-t-2 border-border hover:bg-fg transition-colors duration-300"
   >
-    <p class="text-sm">&copy; 2025 Yonderson. All rights reserved.</p>
+    <p class="text-sm"></p>
+    <p class="text-sm absolute left-1/2 transform -translate-x-1/2">
+      &copy; 2025 Yonderson. All rights reserved.
+    </p>
+    <p class="text-sm mr-4">You are visitor number: #<span id="visitor-count"></span></p>
   </div>
 </footer>
+
+<script>
+  const counted = sessionStorage.getItem('visitor-counted');
+
+  const url = counted ? '/.netlify/functions/get-visit-count' : '/.netlify/functions/track-visit';
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      (document.getElementById('visitor-count') as HTMLElement).textContent = data.count;
+      if (!counted) {
+        sessionStorage.setItem('visitor-counted', 'true');
+      }
+    })
+    .catch(() => {
+      (document.getElementById('visitor-count') as HTMLElement).textContent = 'n/a';
+    });
+</script>
