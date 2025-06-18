@@ -1,0 +1,52 @@
+---
+// AnimatedSectionBorder.astro
+---
+
+<div class="border-wrapper">
+  <div
+    class="absolute top-0 left-1/2 h-full w-0 bg-divider origin-center motion-safe:duration-[1500ms] ease-out"
+    data-side="left"
+  >
+  </div>
+  <div
+    class="absolute top-0 right-1/2 h-full w-0 bg-divider origin-center motion-safe:duration-[1500ms] ease-out"
+    data-side="right"
+  >
+  </div>
+</div>
+
+<style>
+  .border-wrapper {
+    @apply relative w-full h-1 bg-transparent overflow-hidden;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Use querySelectorAll to grab all animated borders
+    const wrappers = document.querySelectorAll('.border-wrapper');
+
+    wrappers.forEach((wrapper) => {
+      if (!window.matchMedia('(min-width: 768px)').matches) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            const bars = wrapper.querySelectorAll('[data-side]');
+            bars.forEach((bar) => {
+              bar.getBoundingClientRect(); // trigger reflow
+              // This allows transition to kick in
+              setTimeout(() => {
+                (bar as HTMLElement).style.width = '50%';
+              }, 100);
+            });
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.9 }
+      );
+
+      observer.observe(wrapper);
+    });
+  });
+</script>
