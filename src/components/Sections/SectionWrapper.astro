@@ -9,9 +9,9 @@ const { id, title, border = true, scroll = false, last = false } = Astro.props;
   id={id}
   class=`cv-section md:snap-start md:h-screen flex flex-col justify-center items-center text-center p-0 md:p-8 max-w-[800px] mx-auto relative after:block after:w-[95%] after:border-b-2 after:border-accent after:mb-10 after:mx-auto md:after:content-none ${ last ? 'after:content-none' : ''}`
 >
-  {title && <AnimatedSectionTitle id={id} title={title} client:visible />}
+  {title && <AnimatedSectionTitle id={id} title={title} />}
 
-  {border && <AnimatedSectionBorder client:visible />}
+  {border && <AnimatedSectionBorder />}
 
   {
     scroll ? (
@@ -36,5 +36,5 @@ const { id, title, border = true, scroll = false, last = false } = Astro.props;
     )
   }
 
-  {border && <AnimatedSectionBorder client:visible />}
+  {border && <AnimatedSectionBorder />}
 </section>
