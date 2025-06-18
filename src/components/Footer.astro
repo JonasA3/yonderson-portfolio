@@ -11,7 +11,7 @@
 </footer>
 
 <script>
-  const counted = sessionStorage.getItem('visitor-counted');
+  const counted = localStorage.getItem('visitor-counted');
 
   const url = counted ? '/.netlify/functions/get-visit-count' : '/.netlify/functions/track-visit';
 
@@ -20,7 +20,7 @@
     .then((data) => {
       (document.getElementById('visitor-count') as HTMLElement).textContent = data.count;
       if (!counted) {
-        sessionStorage.setItem('visitor-counted', 'true');
+        localStorage.setItem('visitor-counted', 'true');
       }
     })
     .catch(() => {
