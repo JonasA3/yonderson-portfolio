@@ -180,3 +180,6 @@ netlify.toml
 # Typescript
 *.tsbuildinfo
 
+
+# Local Netlify folder
+.netlify
