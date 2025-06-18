@@ -105,3 +105,23 @@ body {
   @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg rounded;
 }
 
+@keyframes letterFlash {
+  0% {
+    color: var(--color-divider, #D1D5DB);
+    opacity: 0.6;
+  }
+  30% {
+    color: var(--color-accent, #1ABC9C);
+    opacity: 1;
+  }
+  100% {
+    color: inherit;
+    opacity: 1;
+  }
+}
+
+.animate-letter-wave span {
+  animation: letterFlash 1000ms ease-out forwards;
+}
+
+

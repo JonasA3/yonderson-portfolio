@@ -1,5 +1,6 @@
 ---
-import AnimatedSectionBorder from "./AnimatedSectionBorder.astro";
+import AnimatedSectionBorder from './AnimatedSectionBorder.astro';
+import AnimatedSectionTitle from './AnimatedSectionTitle.astro';
 
 const { id, title, border = true, scroll = false, last = false } = Astro.props;
 ---
@@ -8,16 +9,13 @@ const { id, title, border = true, scroll = false, last = false } = Astro.props;
   id={id}
   class=`cv-section md:snap-start md:h-screen flex flex-col justify-center items-center text-center p-0 md:p-8 max-w-[800px] mx-auto relative after:block after:w-[95%] after:border-b-2 after:border-accent after:mb-10 after:mx-auto md:after:content-none ${ last ? 'after:content-none' : ''}`
 >
+  {title && <AnimatedSectionTitle id={id} title={title} client:visible />}
 
-{title && <h2 id=`${id}-mobile` class="text-4xl font-logo md:mb-4">{title}</h2>}
-
-{border && <AnimatedSectionBorder client:visible />}
+  {border && <AnimatedSectionBorder client:visible />}
 
   {
     scroll ? (
-      <div
-        class={`w-full mb-4 p-8 pt-3 md:pt-8 flex flex-col items-center`}
-      >
+      <div class={`w-full mb-4 p-8 pt-3 md:pt-8 flex flex-col items-center`}>
         <div class="scroll-fade-wrapper hidden md:block relative max-h-[60vh] w-full">
           <div class="fade-top absolute top-0 left-0 w-full h-10 pointer-events-none z-10" />
           <div class="fade-bottom absolute bottom-0 left-0 w-full h-[18rem] pointer-events-none z-10" />
@@ -32,14 +30,11 @@ const { id, title, border = true, scroll = false, last = false } = Astro.props;
         </div>
       </div>
     ) : (
-      <div
-        class={`w-full mb-4 p-8 pt-3 md:pt-8 flex flex-col items-center`}
-      >
+      <div class={`w-full mb-4 p-8 pt-3 md:pt-8 flex flex-col items-center`}>
         <slot />
       </div>
     )
   }
 
   {border && <AnimatedSectionBorder client:visible />}
-
 </section>

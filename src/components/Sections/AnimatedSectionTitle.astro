@@ -1,0 +1,37 @@
+---
+// AnimatedSectionTitle.astro
+const { title, id } = Astro.props;
+---
+
+{
+  title && (
+    <h2 id={`${id}-mobile`} class="text-4xl font-logo md:mb-4 heading-animate" data-animate-title>
+      {title.split('').map((char: string, i: number) => (
+        <span class="inline-block opacity-100" style={`animation-delay: ${i * 50}ms`}>
+          {char === ' ' ? '\u00A0' : char}
+        </span>
+      ))}
+    </h2>
+  )
+}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const titles = document.querySelectorAll('[data-animate-title]');
+    if (!window.matchMedia('(max-width: 767px)').matches) return;
+    titles.forEach((title) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            title.classList.add('animate-letter-wave');
+          } else {
+            title.classList.remove('animate-letter-wave');
+          }
+        },
+        { threshold: 1, rootMargin: '-20% 0px -20% 0px' }
+      );
+
+      observer.observe(title);
+    });
+  });
+</script>
