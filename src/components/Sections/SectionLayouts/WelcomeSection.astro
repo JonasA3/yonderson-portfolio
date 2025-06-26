@@ -12,8 +12,8 @@ import { cn } from '../../../utils/cn';
 const lang = (Astro.cookies.get('lang')?.value as 'en' | 'sv') ?? 'en';
 const cvPath =
   lang === 'sv'
-    ? '/public/publicFiles/CV_SE_Jonas_Andersson_Juni_2025.pdf'
-    : '/public/publicFiles/CV_EN_Jonas_Andersson_Juni_2025.pdf';
+    ? '/publicFiles/CV_SE_Jonas_Andersson_Juni_2025.pdf'
+    : '/publicFiles/CV_EN_Jonas_Andersson_Juni_2025.pdf';
 
 const { welcomeText } = t[lang].cvContent;
 const { download } = t[lang].labels;
