@@ -1,6 +1,3 @@
-
-/* eslint-env node */
-
 import type { Handler } from '@netlify/functions';
 import { createClient } from '@supabase/supabase-js';
 
