@@ -30,7 +30,7 @@ export const t: Record<'en' | 'sv', Translations> = {
                 activeSkills: [
                     {
                         area: 'Frontend',
-                        skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'REST API', 'SOAP API', 'GraphQL']
+                        skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'REST API', 'C#', 'MVC', 'SSMS']
                     },
                     {
                       area: 'Testing',
@@ -42,7 +42,7 @@ export const t: Record<'en' | 'sv', Translations> = {
                     },
                     {
                         area: 'Tools & Platforms',
-                        skills: ['Git', 'Github', 'VS Code', 'Postman', 'Slack', 'Trello', 'Monday']
+                        skills: ['Git', 'Github', 'VS Code', 'Postman', 'Slack', 'Trello', 'Azure DevOps', 'Visual Studio']
                     },    
                     {
                         area: 'Design & UI/UX',
@@ -60,11 +60,11 @@ export const t: Record<'en' | 'sv', Translations> = {
                     },
                     {
                         area: 'Backend',
-                        skills: ['C#', 'ASP.NET', 'Entity Framework', 'SQL Server', 'Python']
+                        skills: [ 'ASP.NET', 'Entity Framework', 'SQL Server', 'Python']
                     },
                     {
                         area: 'Tools & Platforms',
-                        skills: ['Visual Studio','Litium Commerce', 'Umbraco', 'Jira', 'confluence']
+                        skills: ['Litium Commerce', 'Umbraco', 'Jira', 'confluence']
                     },
                     {
                         area: 'Cloud',
@@ -77,6 +77,20 @@ export const t: Record<'en' | 'sv', Translations> = {
                    
                 ],
                 experience: [
+                  {
+                        company: 'Qsys',
+                        position: 'Frontend developer & UI/UX designer',
+                        location: 'Mölndal / Jönköping',
+                        startDate: '2025',
+                        endDate: 'Ongoing',
+                        workDone: [
+                            'Head of UI/UX design',
+                            'Frontend development C# and JavaScript',
+                            'Implementation of new designs and functions',
+                            'Close collaboration with team',
+                            'Participation in code reviews and contributions to team knowledge.',
+                            'Work with Azure DevOps for git, CD/CI and sprints.']
+                    },
                     {
                         company: 'R3',
                         position: 'Web Developer',
@@ -227,7 +241,7 @@ export const t: Record<'en' | 'sv', Translations> = {
                 activeSkills: [
                   {
                     area: 'Frontend',
-                    skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'REST API', 'SOAP API', 'GraphQL']
+                    skills: ['React', 'TypeScript', 'AstroJS', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'REST API', 'C#', 'MVC', '.NET', 'SQL Server']
                   },
                   {
                     area: 'Tester',
@@ -239,7 +253,7 @@ export const t: Record<'en' | 'sv', Translations> = {
                   },
                   {
                     area: 'Verktyg & Plattformar',
-                    skills: ['Git', 'Github', 'VS Code', 'Postman', 'Slack', 'Trello', 'Monday']
+                    skills: ['Git', 'Github', 'VS Code', 'Postman', 'Slack', 'Trello', 'Azure DevOps', 'Visual Studio']
                   },
                   {
                     area: 'Design & UI/UX',
@@ -257,11 +271,11 @@ export const t: Record<'en' | 'sv', Translations> = {
                   },
                   {
                     area: 'Backend',
-                    skills: ['C#', 'ASP.NET', 'Entity Framework', 'SQL Server', 'Python']
+                    skills: ['ASP.NET', 'Entity Framework', 'Python']
                   },
                   {
                     area: 'Verktyg & Plattformar',
-                    skills: ['Visual Studio','Litium Commerce', 'Umbraco', 'Jira', 'Confluence']
+                    skills: ['Litium Commerce', 'Umbraco', 'Jira', 'Confluence']
                   },
                   {
                     area: 'Moln',
@@ -273,6 +287,19 @@ export const t: Record<'en' | 'sv', Translations> = {
                   }
                 ],
                 experience: [
+                  {
+                        company: 'Qsys',
+                        position: 'Frontend developer & UI/UX designer',
+                        location: 'Mölndal / Jönköping',
+                        startDate: '2025',
+                        endDate: 'Ongoing',
+                        workDone: [
+                            'Ansvarig för UI/UX design',
+                            'Frontend dutveckling i C#, JavaScript och React',
+                            'Utvekling i .NET miljö med Visual Studio och SSMS',
+                            'Implementering av ny design och funktion',
+                            'Arbete i Azure DevOps för git, CD/CI and sprintar.']
+                    },
                   {
                     company: 'R3',
                     position: 'Webbutvecklare',
