@@ -6,7 +6,7 @@ import astroParser from 'astro-eslint-parser';
 
 export default [
   {
-    ignores: ['**/.astro/*.d.ts'],
+    ignores: ['.astro/**', '.netlify/**', 'dist/**'],
   },
   js.configs.recommended,
   {

@@ -33,6 +33,14 @@ A helper and middleware file are also included for future expansion (like automa
 
 ## 🚀 Available Scripts
 
+Use Node.js 22.19 or newer. With nvm, run `nvm install` and `nvm use`
+to select the version in `.nvmrc`, then run `npm ci`.
+
+The dependency overrides update Netlify's local function emulator to remove
+the vulnerable `extract-zip` dependency and update `ipx`'s image processor
+to a patched `sharp` release. Keep these until Netlify's dependency ranges
+include the patched versions.
+
 | Command             | Action                                  |
 |---------------------|-----------------------------------------|
 | `npm install`       | Install dependencies                    |
